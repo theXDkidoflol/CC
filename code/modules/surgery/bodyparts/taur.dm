@@ -2,7 +2,8 @@
 /obj/item/bodypart/taur
 	name = "taur"
 	desc = ""
-	icon = 'icons/mob/taurs.dmi'
+	///Caustic edit
+	icon = 'modular_causticcove/icons/mob/taurs/taurs.dmi'
 	icon_state = ""
 	attack_verb = list("hit")
 	max_damage = 200
@@ -31,7 +32,8 @@
 
 	// Clip Masks allow you to apply a clipping filter to some other parts of human rendering to avoid anything overlapping the tail.
 	// Specifically: update_inv_cloak, update_inv_shirt, update_inv_armor, and update_inv_pants.
-	var/icon/clip_mask_icon = 'icons/mob/taurs.dmi'
+	///Caustic edit
+	var/icon/clip_mask_icon = 'modular_causticcove/icons/mob/taurs/taurs.dmi'
 	var/clip_mask_state = "taur_clip_mask_def"
 	// Instantiated at runtime for speed
 	var/tmp/icon/clip_mask
