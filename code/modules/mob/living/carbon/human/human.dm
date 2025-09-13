@@ -722,6 +722,10 @@
 
 /mob/living/carbon/human/MouseDrop_T(mob/living/target, mob/living/user)
 	if(pulling == target && stat == CONSCIOUS)
+		if(user.grab_state && user.voremode)
+			if(ismob(user.pulling))
+				user.vore_attack(user, target, src) // User, Pulled, Predator target (which can be user, pulling, or src)
+				return TRUE
 		//If they dragged themselves and we're currently aggressively grabbing them try to piggyback (not on cmode)
 		if(user == target && can_piggyback(target))
 			if(cmode)
