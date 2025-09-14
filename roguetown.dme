@@ -2574,6 +2574,7 @@
 #include "modular_causticcove\code\modules\classes\lurker.dm"
 #include "modular_causticcove\code\modules\classes\mage.dm"
 #include "modular_causticcove\code\modules\classes\shophand.dm"
+#include "modular_causticcove\code\modules\extra_virtue\prefs.dm"
 #include "modular_causticcove\code\modules\micromacrointeractions\helperfunctions.dm"
 #include "modular_causticcove\code\modules\micromacrointeractions\microholder.dm"
 #include "modular_causticcove\code\modules\micromacrointeractions\prefs.dm"

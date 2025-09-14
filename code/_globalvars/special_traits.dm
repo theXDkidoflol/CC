@@ -66,6 +66,7 @@ GLOBAL_LIST_INIT(special_traits, build_special_traits())
 
 	var/datum/virtue/virtue_type = player.prefs.virtue
 	var/datum/virtue/virtuetwo_type = player.prefs.virtuetwo
+	var/datum/virtue/extravirtue_type = player.prefs.extravirtue
 	if(virtue_type)
 		if(virtue_check(virtue_type, heretic))
 			apply_virtue(character, virtue_type)
@@ -74,6 +75,11 @@ GLOBAL_LIST_INIT(special_traits, build_special_traits())
 	if(virtuetwo_type && virtuous)
 		if(virtue_check(virtuetwo_type, heretic))
 			apply_virtue(character, virtuetwo_type)
+		else
+			to_chat(character, "Incorrect Second Virtue parameters! (Heretic virtue on a non-heretic) It will not be applied.")
+	if(extravirtue_type)
+		if(virtue_check(extravirtue_type, heretic))
+			apply_virtue(character, extravirtue_type)
 		else
 			to_chat(character, "Incorrect Second Virtue parameters! (Heretic virtue on a non-heretic) It will not be applied.")
 
