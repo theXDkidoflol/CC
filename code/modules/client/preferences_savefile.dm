@@ -416,6 +416,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	else
 		virtuetwo = new /datum/virtue/none
 
+	load_extra_virtue(S)
+
 /datum/preferences/proc/_load_loadout(S)
 	var/loadout_type
 	S["loadout"] >> loadout_type
@@ -794,6 +796,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Caustic edit
 	save_vore_prefs(S)
 	save_sizecat(S)
+	save_extra_virtue(S)
 	//Caustic edit end
 	return TRUE
 
