@@ -178,7 +178,7 @@
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/shoplackey
 	category_tags = list(CTAG_SHOPHAND)
-	ubclass_stats = list(
+	subclass_stats = list(
 		STATKEY_SPD = 1,
 		STATKEY_INT = 1,
 		STATKEY_LCK = 1,
