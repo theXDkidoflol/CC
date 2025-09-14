@@ -520,6 +520,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	_load_virtue(S)
 	_load_flaw(S)
+	//Caustic edit
+	_load_sizecat(S)
 
 	_load_culinary_preferences(S)
 
@@ -789,9 +791,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["familiar_ooc_notes_display"] , familiar_prefs.familiar_ooc_notes_display)
 	WRITE_FILE(S["familiar_ooc_extra"] , familiar_prefs.familiar_ooc_extra)
 	WRITE_FILE(S["familiar_ooc_extra_link"] , familiar_prefs.familiar_ooc_extra_link)
-
+	//Caustic edit
 	save_vore_prefs(S)
-
+	save_sizecat(S)
+	//Caustic edit end
 	return TRUE
 
 
