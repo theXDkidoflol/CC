@@ -2573,6 +2573,8 @@
 #include "modular_causticcove\code\modules\micromacrointeractions\prefs.dm"
 #include "modular_causticcove\code\modules\micromacrointeractions\sametile.dm"
 #include "modular_causticcove\code\modules\micromacrointeractions\scoop.dm"
+#include "modular_causticcove\code\modules\reformgem\reformgem.dm"
+#include "modular_causticcove\code\modules\reformgem\reformportal.dm"
 #include "modular_causticcove\code\modules\sizecats\prefs.dm"
 #include "modular_causticcove\code\modules\sizecats\sizecat_types.dm"
 #include "modular_causticcove\code\modules\sizecats\sizecats.dm"
