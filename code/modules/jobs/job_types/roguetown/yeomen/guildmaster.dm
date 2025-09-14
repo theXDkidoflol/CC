@@ -24,7 +24,7 @@
 	round_contrib_points = 3
 	cmode_music = 'sound/music/cmode/towner/combat_retired.ogg'
 
-	job_traits = list(TRAIT_TRAINED_SMITH, TRAIT_SEEPRICES)
+	job_traits = list(TRAIT_TRAINED_SMITH, TRAIT_SEEPRICES, TRAIT_ARCYNE_T1)
 
 	advclass_cat_rolls = list(CTAG_GUILDSMASTER = 2)
 	job_subclasses = list(
@@ -49,7 +49,8 @@
 		STATKEY_STR = 2,
 		STATKEY_CON = 2,
 		STATKEY_WIL = 2,
-		STATKEY_INT = 1
+		STATKEY_INT = 1,
+		STATKEY_PER = 2
 	)
 	subclass_skills = list(
 		/datum/skill/combat/axes = SKILL_LEVEL_JOURNEYMAN,
@@ -72,6 +73,8 @@
 		/datum/skill/misc/ceramics = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/craft/traps = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/reading = SKILL_LEVEL_APPRENTICE,
+		//Caustic edit
+		/datum/skill/combat/crossbows = SKILL_LEVEL_JOURNEYMAN,
 	)
 
 /datum/outfit/job/roguetown/guildmaster
@@ -79,6 +82,7 @@
 
 /datum/outfit/job/roguetown/guildmaster/basic/pre_equip(mob/living/carbon/human/H)
 	H.adjust_blindness(-3)
+
 	head = /obj/item/clothing/head/roguetown/chaperon/noble/guildmaster
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/blacksmith
 	if(H.mind)
@@ -100,6 +104,10 @@
 		belt = /obj/item/storage/belt/rogue/leather
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/rich
 		beltr = /obj/item/storage/keyring/guildmaster
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/enchant_weapon)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/conjure_weapon)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/conjure_armor)
 
 /datum/outfit/job/roguetown/guildmaster/choose_loadout(mob/living/carbon/human/H)
 	. = ..()

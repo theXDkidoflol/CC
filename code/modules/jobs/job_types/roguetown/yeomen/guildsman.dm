@@ -118,7 +118,7 @@
 		STATKEY_WIL = 2,
 		STATKEY_STR = 1,
 		STATKEY_CON = 1,
-		STATKEY_PER = 1
+		STATKEY_PER = 2
 	)
 	subclass_skills = list(
 		/datum/skill/combat/axes = SKILL_LEVEL_APPRENTICE,
@@ -139,6 +139,7 @@
 		/datum/skill/craft/traps = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/reading = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/ceramics = SKILL_LEVEL_JOURNEYMAN,	//Just for basic pottery/glass stuff.
+		/datum/skill/combat/crossbows = SKILL_LEVEL_APPRENTICE //Caustic edit
 	)
 
 /datum/outfit/job/roguetown/guildsman/artificer/pre_equip(mob/living/carbon/human/H)
