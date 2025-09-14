@@ -70,7 +70,11 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 		/datum/advclass/foreigner/yoruku,
 		/datum/advclass/foreigner/repentant,
 		/datum/advclass/foreigner/refugee,
-		/datum/advclass/foreigner/slaver
+		/datum/advclass/foreigner/slaver,
+		///Caustic edit
+		/datum/advclass/mage/spellthief,
+		/datum/advclass/lurker,
+		///Caustic edit end
 	)
 
 /datum/job/roguetown/adventurer/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
