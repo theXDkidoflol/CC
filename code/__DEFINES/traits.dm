@@ -207,6 +207,11 @@
 #define TRAIT_MONK_ROBE	"Holy Vestatures"
 #define TRAIT_RACISMISBAD "Heritage Vision"
 
+//Caustic edit
+#define TRAIT_NECRAS_ABATEMENT "Necra's Abatement" //keeps deadites from doing much of anything in town
+//Caustice edit end
+
+
 // If you want description to show up you gotta have the trait name defined BEFORE this lol
 
 GLOBAL_LIST_INIT(roguetraits, list(
@@ -382,6 +387,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	//Caustic edit
 	TRAIT_NATURAL_ARMOR = span_notice("My hide is thick and resilient. It will regenerate so long as I keep it fed..."),
 	TRAIT_FERAL = span_info("The wilds is where I am meant to be. Civilized realms are no place for the likes of me."),
+	TRAIT_NECRAS_ABATEMENT = span_info("The Undermaiden's gaze lingers upon me, and intensifies as I draw closer to hallowed ground."),
 	//Caustic edit end
 ))
 

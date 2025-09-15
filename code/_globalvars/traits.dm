@@ -144,7 +144,10 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		TRAIT_CURSE_MATTHIOS,
 		TRAIT_CURSE_BAOTHA,
 		TRAIT_CURSE_RESIST,
-		TRAIT_DREAMWALKER
+		TRAIT_DREAMWALKER,
+		//Caustic edit
+		TRAIT_NECRAS_ABATEMENT
+		//Caustic edit end
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
