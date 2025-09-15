@@ -93,9 +93,3 @@
 	var/area/rogue/our_area = get_area(owner)
 	if(!(our_area.town_area))
 		owner.remove_status_effect(/datum/status_effect/buff/feraldebuff)
-	
-/area/rogue/Entered(mob/living/carbon/human/fellow)
-
-	. = ..()
-	if((src.town_area == TRUE) && HAS_TRAIT(fellow, TRAIT_FERAL) && !fellow.has_status_effect(/datum/status_effect/buff/feraldebuff)) //feral creatures don't do well in town
-		fellow.apply_status_effect(/datum/status_effect/buff/feraldebuff)

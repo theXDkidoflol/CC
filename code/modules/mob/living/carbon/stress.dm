@@ -124,14 +124,19 @@
 				to_chat(src, span_boldred("I'M FREAKING OUT!!!"))
 				play_mental_break_indicator()
 				apply_status_effect(/datum/status_effect/mood/vbad)
+	//Caustic edit
+	/*
+	if(new_stress >=13)
 
-	/*if(new_stress >=13)
 		if(!HAS_TRAIT(src, TRAIT_EORAN_CALM) && !HAS_TRAIT(src, TRAIT_EORAN_SERENE))
 			random_stress_message()
 
 	if(new_stress >= 20)
 		if(!HAS_TRAIT(src, TRAIT_EORAN_CALM) && !HAS_TRAIT(src, TRAIT_EORAN_SERENE))
-			roll_streak_freakout()*/
+			roll_streak_freakout()
+	*/
+	//Caustic edit end
+
 
 	oldstress = new_stress
 	update_stress_visual(new_stress)
