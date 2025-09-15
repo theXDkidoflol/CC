@@ -123,7 +123,8 @@ GLOBAL_LIST_INIT(stress_messages, world.file2list("strings/rt/stress_messages.tx
 				to_chat(src, span_boldred("I'M FREAKING OUT!!!"))
 				play_mental_break_indicator()
 				apply_status_effect(/datum/status_effect/mood/vbad)
-
+	//Caustic edit
+	/*
 	if(new_stress >=13)
 		if(!HAS_TRAIT(src, TRAIT_EORAN_CALM) && !HAS_TRAIT(src, TRAIT_EORAN_SERENE))
 			random_stress_message()
@@ -131,6 +132,8 @@ GLOBAL_LIST_INIT(stress_messages, world.file2list("strings/rt/stress_messages.tx
 	if(new_stress >= 20)
 		if(!HAS_TRAIT(src, TRAIT_EORAN_CALM) && !HAS_TRAIT(src, TRAIT_EORAN_SERENE))
 			roll_streak_freakout()
+	*/
+	//Caustic edit end
 
 	oldstress = new_stress
 	update_stress_visual(new_stress)

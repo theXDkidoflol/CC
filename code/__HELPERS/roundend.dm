@@ -132,8 +132,9 @@
 	log_game("The round has ended.")
 
 	to_chat(world, "<BR><BR><BR><span class='reallybig'>So ends this tale on Azure Peak.</span>")
-	get_end_reason()
-
+	//Caustic edit
+	// get_end_reason()
+	//Caustic edit end
 	var/list/key_list = list()
 	for(var/client/C in GLOB.clients)
 		if(C.mob)
