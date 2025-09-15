@@ -71,7 +71,10 @@
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/bodypart_feature/legwear,
 		/datum/customizer/organ/horns/anthro,
+		//Caustic edit
+		// /datum/customizer/organ/tail/tiefling,
 		/datum/customizer/organ/tail/demihuman,
+		//Caustic edit end
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/human,
