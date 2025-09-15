@@ -65,6 +65,8 @@
 		/datum/customizer/organ/breasts/human,
 		/datum/customizer/organ/vagina/human_anthro,
 		//Caustic edit
+		/datum/customizer/organ/belly/human,
+		/datum/customizer/organ/butt/human,
 		/datum/customizer/organ/testicles/anthro,
 		//Caustic edit end
 		)
@@ -123,7 +125,7 @@
 
 /datum/species/construct/metal/check_roundstart_eligible()
 	return TRUE
-	
+
 /datum/species/construct/metal/get_skin_list()
 	return list(
 		"BRASS" = "dfbd6c",

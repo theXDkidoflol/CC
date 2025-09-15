@@ -111,6 +111,10 @@
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
 		/datum/customizer/organ/vagina/anthro,
+		//Caustic edit
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
+		//Caustic edit end
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
