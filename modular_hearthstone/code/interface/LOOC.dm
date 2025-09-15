@@ -48,6 +48,7 @@
 		return
 	*/
 	//Caustic edit end
+
 	if(!mob)
 		return
 

@@ -44,6 +44,12 @@ GLOBAL_LIST_INIT(special_traits, build_special_traits())
 		character.mind.special_items[player.prefs.loadout2::name] += player.prefs.loadout2.path
 	if(player.prefs.loadout3)
 		character.mind.special_items[player.prefs.loadout3::name] += player.prefs.loadout3.path
+	//Cove edit start
+	if(player.prefs.loadout4)
+		character.mind.special_items[player.prefs.loadout4::name] += player.prefs.loadout4.path
+	if(player.prefs.loadout5)
+		character.mind.special_items[player.prefs.loadout5::name] += player.prefs.loadout5.path
+	//Cove edit end
 	var/datum/job/assigned_job = SSjob.GetJob(character.mind?.assigned_role)
 	if(assigned_job)
 		assigned_job.clamp_stats(character)

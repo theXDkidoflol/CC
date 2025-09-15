@@ -135,6 +135,7 @@
 	//Caustic edit
 	// get_end_reason()
 	//Caustic edit end
+
 	var/list/key_list = list()
 	for(var/client/C in GLOB.clients)
 		if(C.mob)
@@ -212,7 +213,8 @@
 	ready_for_reboot = TRUE
 	standard_reboot()
 
-/datum/controller/subsystem/ticker/proc/get_end_reason()
+//Cove edit
+/*/datum/controller/subsystem/ticker/proc/get_end_reason()
 	var/end_reason
 
 	if(!check_for_lord())
@@ -236,7 +238,7 @@
 	if(end_reason)
 		to_chat(world, span_bigbold("[end_reason]."))
 	else
-		to_chat(world, span_bigbold("The town has managed to survive another week."))
+		to_chat(world, span_bigbold("The town has managed to survive another week."))*/
 
 /datum/controller/subsystem/ticker/proc/gamemode_report()
 	var/list/all_teams = list()
