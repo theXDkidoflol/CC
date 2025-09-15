@@ -77,7 +77,7 @@
 	{
 		return
 	}
- 
+
 	for (var/datum/customizer_entry/entry in prefs.customizer_entries)
 	{
 		if (istype(entry, /datum/customizer_entry/organ/belly))
@@ -88,7 +88,7 @@
 	}
 
 	var/named_size = input(user, "Choose your belly size:", "Belly", find_key_by_value(GLOB.named_belly_sizes, belly_entry.belly_size)) as anything in GLOB.named_belly_sizes
-    
+
 	if (isnull(named_size))
 		return
 
