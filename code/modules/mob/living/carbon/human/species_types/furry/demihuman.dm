@@ -13,6 +13,7 @@
 		/obj/item/bodypart/taur/lamia,
 		/obj/item/bodypart/taur/spider,
 		/obj/item/bodypart/taur/horse,
+		///Caustic edit
 		/obj/item/bodypart/taur/cow,
 		/obj/item/bodypart/taur/lizard,
 		/obj/item/bodypart/taur/tent,
@@ -33,6 +34,8 @@
 		/obj/item/bodypart/taur/altnaga,
 		/obj/item/bodypart/taur/altnagatailmaw,
 		/obj/item/bodypart/taur/fatnaga,
+		/obj/item/bodypart/taur/bunny,
+		///Caustic edit end
 	)
 	default_features = MANDATORY_FEATURE_LIST
 	use_skintones = TRUE
@@ -92,6 +95,10 @@
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
 		/datum/customizer/organ/vagina/animal,
+		//Caustic edit
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
+		//Caustic edit end
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
@@ -125,7 +132,7 @@
 		/datum/descriptor_choice/prominent_three_wild,
 		/datum/descriptor_choice/prominent_four_wild,
 	)
-	
+
 /datum/species/demihuman/check_roundstart_eligible()
 	return TRUE
 

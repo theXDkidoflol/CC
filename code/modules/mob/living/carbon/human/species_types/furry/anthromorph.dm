@@ -23,6 +23,7 @@
 		/obj/item/bodypart/taur/lamia,
 		/obj/item/bodypart/taur/spider,
 		/obj/item/bodypart/taur/horse,
+		///Caustic edit
 		/obj/item/bodypart/taur/cow,
 		/obj/item/bodypart/taur/lizard,
 		/obj/item/bodypart/taur/tent,
@@ -43,6 +44,8 @@
 		/obj/item/bodypart/taur/altnaga,
 		/obj/item/bodypart/taur/altnagatailmaw,
 		/obj/item/bodypart/taur/fatnaga,
+		/obj/item/bodypart/taur/bunny,
+		///Caustic edit end
 	)
 
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
@@ -109,6 +112,10 @@
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
 		/datum/customizer/organ/vagina/anthro,
+		//Caustic edit
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
+		//Caustic edit end
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
