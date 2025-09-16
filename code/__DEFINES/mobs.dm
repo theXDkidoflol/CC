@@ -337,6 +337,8 @@
 #define OFFSET_UNDIES_F "underwearf"
 //Caustic Edit - Not sure why it only behaves if is in here, but here it is
 #define OFFSET_BUTT "butt"
+#define OFFSET_TAUR "taur"
+#define OFFSET_TAUR_F "taurf"
 //Caustic End
 
 //MINOR TWEAKS/MISC

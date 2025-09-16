@@ -104,7 +104,7 @@
 	icon_state = "drake_markings"
 
 /datum/sprite_accessory/tail_feature/taur/otie
-	name = "Large Hound Markings"
+	name = "Virgo Shit Dog Markings"
 	icon = 'icons/mob/sprite_accessory/tail_features/otie_markings.dmi'
 	icon_state = "otie_markings"
 
