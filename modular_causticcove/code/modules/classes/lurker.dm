@@ -12,7 +12,7 @@
 	tutorial = "You have embraced your feral instincts. You tread through brush and thicket unimpeded, and hunt as the beasts of Dendor do. Civilization is your anathema, and is to be avoided. For what purpose is the safety of a tavern when you thrive in this wild realm?"
 	traits_applied = list(TRAIT_OUTLANDER, TRAIT_OUTDOORSMAN, TRAIT_STRONGBITE, TRAIT_CRITICAL_RESISTANCE, TRAIT_WILD_EATER, TRAIT_SEEDKNOW, TRAIT_CIVILIZEDBARBARIAN, TRAIT_AZURENATIVE, TRAIT_WOODWALKER, TRAIT_FERAL)
 	subclass_stats = list(
-		STATKEY_STR = -4,
+		STATKEY_STR = 4,
 		STATKEY_INT = -3,
 		STATKEY_PER = 3,
 		STATKEY_WIL = 4,
