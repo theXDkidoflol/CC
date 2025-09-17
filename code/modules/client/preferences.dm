@@ -2619,7 +2619,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 			for(var/X in L)
 				ADD_TRAIT(character, curse2trait(X), TRAIT_GENERIC)
 
-	if(taur_type)
+	if(taur_type && pref_species.allowed_taur_types.len != 0)
 		character.Taurize(taur_type, "#[taur_color]")
 	else if(character_setup)
 		// This should only ever ~do~ anything for previews
