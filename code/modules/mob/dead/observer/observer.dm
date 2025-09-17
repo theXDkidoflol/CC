@@ -390,9 +390,10 @@ Works together with spawning an observer, noted above.
 				return ..()
 			var/datum/antagonist/zombie/Z = mind.has_antag_datum(/datum/antagonist/zombie)
 			if(!Z.revived)
-				if(!(world.time % 5))
-					to_chat(src, span_warning("I'm preparing to walk again."))
-				return
+				//Caustic edit
+				mind.remove_antag_datum(/datum/antagonist/zombie)
+				return ..()
+				//Caustic edit end
 	return ..()
 
 /mob/proc/scry_ghost()
