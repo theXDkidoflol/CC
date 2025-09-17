@@ -168,6 +168,9 @@
 		/datum/sprite_accessory/ears/big/acrador_short,
 		/datum/sprite_accessory/ears/big/sandfox_large,
 		/datum/sprite_accessory/ears/lynx,
+		//CC Start
+		/datum/sprite_accessory/ears/big/caustic/bunny_large,
+		//CC End
 		)
 
 /datum/customizer/organ/ears/anthro
@@ -233,6 +236,9 @@
 		/datum/sprite_accessory/ears/big/acrador_short,
 		/datum/sprite_accessory/ears/big/sandfox_large,
 		/datum/sprite_accessory/ears/lynx,
+		//CC Start
+		/datum/sprite_accessory/ears/big/caustic/bunny_large,
+		//CC End
 		)
 
 /datum/customizer/organ/ears/lizard
