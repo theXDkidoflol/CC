@@ -409,7 +409,6 @@
 							'sound/foley/footsteps/armor/woodarmor (2).ogg',
 							'sound/foley/footsteps/armor/woodarmor (3).ogg',
 							)
-	return soundin
 	//START OF CIT CHANGES - adds random vore sounds
 			if ("struggle_sound")
 				soundin = pick( 'modular_causticcove/sound/vore/pred/struggle_01.ogg','modular_causticcove/sound/vore/pred/struggle_02.ogg','modular_causticcove/sound/vore/pred/struggle_03.ogg',
