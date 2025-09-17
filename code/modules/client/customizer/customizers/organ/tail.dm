@@ -125,6 +125,9 @@
 		/datum/sprite_accessory/tail/kangaroo,
 		/datum/sprite_accessory/tail/kitsune,
 		/datum/sprite_accessory/tail/lab,
+		//Caustic edit
+		/datum/sprite_accessory/tail/large_snake,
+		//Caustic edit end
 		/datum/sprite_accessory/tail/murid,
 		/datum/sprite_accessory/tail/orca,
 		/datum/sprite_accessory/tail/otie,
@@ -201,6 +204,9 @@
 		/datum/sprite_accessory/tail/kangaroo,
 		/datum/sprite_accessory/tail/kitsune,
 		/datum/sprite_accessory/tail/lab,
+		//Caustic edit
+		/datum/sprite_accessory/tail/large_snake,
+		//Caustic edit end
 		/datum/sprite_accessory/tail/murid,
 		/datum/sprite_accessory/tail/orca,
 		/datum/sprite_accessory/tail/otie,

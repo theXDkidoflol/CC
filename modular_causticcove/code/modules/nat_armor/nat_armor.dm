@@ -10,7 +10,7 @@
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
 	sewrepair = FALSE
-	max_integrity = 600
+	max_integrity = 300
 	item_flags = DROPDEL
 	var/next_regen
 	var/mob/living/carbon/human/skin_haver
@@ -32,7 +32,7 @@
 	if(next_regen > world.time)
 		return
 	regenerate(skin_haver)
-	next_regen = world.time + 30 SECONDS
+	next_regen = world.time + 45 SECONDS
 
 /obj/item/clothing/suit/roguetown/armor/skin_armor/natural_armor/proc/trait_add(mob/living/user)
 	skin_haver = user
