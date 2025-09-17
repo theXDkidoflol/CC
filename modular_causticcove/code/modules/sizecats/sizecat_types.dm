@@ -23,10 +23,10 @@
 	recipient.transform = recipient.transform.Scale(2, 2)
 	recipient.transform = recipient.transform.Translate(0, (0.25 * 35))
 	recipient.update_transform()
-	recipient.change_stat("strength", 8)
-	recipient.change_stat("endurance", 8)
-	recipient.change_stat("constitution", 8)
-	recipient.change_stat("speed", -14)
+	recipient.change_stat(STATKEY_STR, 8)
+	recipient.change_stat(STATKEY_WIL, 8)
+	recipient.change_stat(STATKEY_CON, 8)
+	recipient.change_stat(STATKEY_SPD, -14)
 	
 /datum/sizecat/micro
 	name = "Micro"
@@ -38,10 +38,10 @@
 	recipient.transform = recipient.transform.Scale(0.2, 0.2)
 	recipient.transform = recipient.transform.Translate(0, (0.25 * 8))
 	recipient.update_transform()
-	recipient.change_stat("strength", -10)
-	recipient.change_stat("endurance", -4)
-	recipient.change_stat("constitution", -10)
-	recipient.change_stat("speed", -14)
+	recipient.change_stat(STATKEY_STR, -10)
+	recipient.change_stat(STATKEY_WIL, -4)
+	recipient.change_stat(STATKEY_CON, -10)
+	recipient.change_stat(STATKEY_SPD, -14)
 	recipient.pass_flags = PASSTABLE | PASSMOB
 	recipient.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 	recipient.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)

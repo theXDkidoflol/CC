@@ -85,7 +85,7 @@
 /datum/status_effect/buff/feraldebuff
 	id = "feraldebuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/feraldebuff
-	effectedstats = list("perception" = -5, "speed" = -2, "strength" = -4, "endurance" = -4, "constitution" = -3)
+	effectedstats = list(STATKEY_PER = -5, STATKEY_SPD = -2, STATKEY_STR = -4, STATKEY_WIL = -4, STATKEY_CON = -3)
 
 /datum/status_effect/buff/feraldebuff/process()
 

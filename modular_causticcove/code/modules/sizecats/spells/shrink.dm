@@ -43,7 +43,9 @@
 /obj/item/melee/touch_attack/sizespell/proc/shrink_target(mob/living/target, mob/living/carbon/human/user)
 	if(!isliving(target))
 		return
-
+	if(HAS_TRAIT(target,TRAIT_MICRO))
+		to_chat(user, "<span class='warning'>They are already small!</span>")
+		return
 	if(user == target)
 		user.visible_message(span_notice("[user] rapidly changes in size!"), span_notice("I rapidly shrink down!"))
 	else	
@@ -55,8 +57,8 @@
 /obj/item/melee/touch_attack/sizespell/proc/grow_target(mob/living/target, mob/living/carbon/human/user)
 	if(!isliving(target))
 		return
-	if(HAS_TRAIT(target,TRAIT_MICRO || TRAIT_MACRO))
-		to_chat(user, "<span class='warning'>They're already afflicted by other magics!</span>")
+	if(HAS_TRAIT(target,TRAIT_MACRO))
+		to_chat(user, "<span class='warning'>They are already large!</span>")
 		return
 
 	if(user == target)
@@ -69,7 +71,7 @@
 /datum/status_effect/buff/shrinked
 	id = "shrink"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/shrinked
-	effectedstats = list("speed" = -14, "strength" = -10, "constitution" = -10, "endurance" = -10, "fortune" = 5)
+	effectedstats = list(STATKEY_SPD = -14, STATKEY_STR = -10, STATKEY_CON = -10, STATKEY_WIL = -10, STATKEY_LCK = 5)
 	var/removable = FALSE
 
 /datum/status_effect/buff/shrinked/on_apply()
@@ -114,7 +116,7 @@
 /datum/status_effect/buff/growth
 	id = "growth"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/growth
-	effectedstats = list("speed" = -14, "strength" = 6, "constitution" = 6, "endurance" = 6)
+	effectedstats = list(STATKEY_SPD = -14, STATKEY_STR = 6, STATKEY_CON = 6, STATKEY_WIL = 6)
 	var/removable = FALSE
 
 /datum/status_effect/buff/growth/on_apply()

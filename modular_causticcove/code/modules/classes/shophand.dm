@@ -228,4 +228,4 @@
 	else //the legendary shopARM
 		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
-		H.change_stat("strength", 1)
+		H.change_stat(STATKEY_STR, 1)
