@@ -57,7 +57,7 @@
 /obj/item/melee/touch_attack/sizespell/proc/grow_target(mob/living/target, mob/living/carbon/human/user)
 	if(!isliving(target))
 		return
-	if(HAS_TRAIT(HAS_TRAIT(target,TRAIT_MACRO))
+	if(HAS_TRAIT(target,TRAIT_MACRO))
 		to_chat(user, "<span class='warning'>They are already large!</span>")
 		return
 
@@ -71,7 +71,7 @@
 /datum/status_effect/buff/shrinked
 	id = "shrink"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/shrinked
-	effectedstats = list("speed" = -14, "strength" = -10, "constitution" = -10, "endurance" = -10, "fortune" = 5)
+	effectedstats = list(STATKEY_SPD = -14, STATKEY_STR = -10, STATKEY_CON = -10, STATKEY_WIL = -10, STATKEY_LCK = 5)
 	var/removable = FALSE
 
 /datum/status_effect/buff/shrinked/on_apply()
@@ -116,7 +116,7 @@
 /datum/status_effect/buff/growth
 	id = "growth"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/growth
-	effectedstats = list("speed" = -14, "strength" = 6, "constitution" = 6, "endurance" = 6)
+	effectedstats = list(STATKEY_SPD = -14, STATKEY_STR = 6, STATKEY_CON = 6, STATKEY_WIL = 6)
 	var/removable = FALSE
 
 /datum/status_effect/buff/growth/on_apply()
