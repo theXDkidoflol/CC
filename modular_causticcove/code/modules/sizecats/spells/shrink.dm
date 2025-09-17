@@ -43,7 +43,9 @@
 /obj/item/melee/touch_attack/sizespell/proc/shrink_target(mob/living/target, mob/living/carbon/human/user)
 	if(!isliving(target))
 		return
-
+	if(HAS_TRAIT(target,TRAIT_MICRO) || HAS_TRAIT(target,TRAIT_MACRO))
+		to_chat(user, "<span class='warning'>They are already small!</span>")
+		return
 	if(user == target)
 		user.visible_message(span_notice("[user] rapidly changes in size!"), span_notice("I rapidly shrink down!"))
 	else	
@@ -55,8 +57,8 @@
 /obj/item/melee/touch_attack/sizespell/proc/grow_target(mob/living/target, mob/living/carbon/human/user)
 	if(!isliving(target))
 		return
-	if(HAS_TRAIT(target,TRAIT_MICRO || TRAIT_MACRO))
-		to_chat(user, "<span class='warning'>They're already afflicted by other magics!</span>")
+	if(HAS_TRAIT(HAS_TRAIT(target,TRAIT_MACRO))
+		to_chat(user, "<span class='warning'>They are already large!</span>")
 		return
 
 	if(user == target)
