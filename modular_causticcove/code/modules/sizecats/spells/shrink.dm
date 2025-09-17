@@ -43,7 +43,7 @@
 /obj/item/melee/touch_attack/sizespell/proc/shrink_target(mob/living/target, mob/living/carbon/human/user)
 	if(!isliving(target))
 		return
-	if(HAS_TRAIT(target,TRAIT_MICRO) || HAS_TRAIT(target,TRAIT_MACRO))
+	if(HAS_TRAIT(target,TRAIT_MICRO))
 		to_chat(user, "<span class='warning'>They are already small!</span>")
 		return
 	if(user == target)
