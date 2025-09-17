@@ -155,6 +155,13 @@
 	icon_state = "lab"
 	can_wag = TRUE
 
+//Caustic Edit
+/datum/sprite_accessory/tail/large_snake
+	icon = 'modular_causticcove/icons/mob/tails/large_snake.dmi'
+	name = "Large Snake"
+	icon_state = "large_snake"
+//Caustic Edit end
+
 /datum/sprite_accessory/tail/murid
 	name = "Murid"
 	icon_state = "murid"
