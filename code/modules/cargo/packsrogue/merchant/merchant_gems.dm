@@ -47,6 +47,6 @@
 // Caustic edit
 /datum/supply_pack/rogue/gems/reform
 	name = "Gem of Reformation"
-	cost = 65
+	cost = 80
 	contains = list(/obj/item/reformation_gem)
 
