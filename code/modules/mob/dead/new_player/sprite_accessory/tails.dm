@@ -163,6 +163,12 @@
 	color_keys = 2
 	color_key_names = list("Tail", "Underbelly")
 
+/datum/sprite_accessory/tail/large_snake_plain
+	icon = 'modular_causticcove/icons/mob/tails/large_snake.dmi'
+	name = "Large Snake Plain"
+	icon_state = "large_snake_plain"	
+
+
 /datum/sprite_accessory/tail/large_tails
 	pixel_x = -16
 
