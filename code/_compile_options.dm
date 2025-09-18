@@ -82,6 +82,6 @@
 #define MAX_ATOM_OVERLAYS 100
 
 // Comment this to remove the PQ system
-#define USES_PQ
+//#define USES_PQ
 // Comment this to remove the SCOM restrictions
-#define USES_SCOM_RESTRICTION
+//#define USES_SCOM_RESTRICTION
