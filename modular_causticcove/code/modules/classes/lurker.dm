@@ -20,19 +20,19 @@
 		STATKEY_CON = 3
 	)
 	subclass_skills = list(
-		/datum/skill/misc/athletics =  SKILL_EXP_EXPERT,
-		/datum/skill/combat/knives = SKILL_EXP_NOVICE,
-		/datum/skill/combat/wrestling = SKILL_EXP_EXPERT,
-		/datum/skill/combat/unarmed = SKILL_EXP_EXPERT,
-		/datum/skill/misc/swimming = SKILL_EXP_EXPERT,
-		/datum/skill/misc/climbing = SKILL_EXP_LEGENDARY,
-		/datum/skill/misc/sneaking = SKILL_EXP_EXPERT,
-		/datum/skill/craft/tanning = SKILL_EXP_JOURNEYMAN,
-		/datum/skill/labor/butchering = SKILL_EXP_EXPERT,
-		/datum/skill/misc/tracking = SKILL_EXP_EXPERT,
-		/datum/skill/misc/medicine = SKILL_EXP_APPRENTICE,
-		/datum/skill/craft/crafting = SKILL_EXP_APPRENTICE,
-		/datum/skill/labor/farming = SKILL_EXP_APPRENTICE,
+		/datum/skill/misc/athletics =  SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/knives = SKILL_LEVEL_NOVICE,
+		/datum/skill/combat/wrestling = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/unarmed = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/swimming = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/climbing = SKILL_LEVEL_LEGENDARY,
+		/datum/skill/misc/sneaking = SKILL_LEVEL_EXPERT,
+		/datum/skill/craft/tanning = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/labor/butchering = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/tracking = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/medicine = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/craft/crafting = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/labor/farming = SKILL_LEVEL_APPRENTICE,
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/wildlurker
 
