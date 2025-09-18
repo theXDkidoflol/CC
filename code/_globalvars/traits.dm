@@ -30,6 +30,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		TRAIT_SEEPRICES,
 		TRAIT_SEEPRICES_SHITTY,
 		TRAIT_STRONGBITE,
+		TRAIT_STRONGKICK,
 		TRAIT_NOBLE,
 		TRAIT_EMPATH,
 		TRAIT_BREADY,
@@ -148,6 +149,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		//Caustic edit
 		TRAIT_NECRAS_ABATEMENT
 		//Caustic edit end
+		TRAIT_ENGINEERING_GOGGLES
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
