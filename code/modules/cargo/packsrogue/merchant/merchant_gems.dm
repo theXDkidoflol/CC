@@ -44,3 +44,9 @@
 	cost = 500
 	contains = list(/obj/item/riddleofsteel)
 
+// Caustic edit
+/datum/supply_pack/rogue/gems/reform
+	name = "Gem of Reformation"
+	cost = 65
+	contains = list(/obj/item/reformation_gem)
+
