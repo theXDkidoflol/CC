@@ -23,7 +23,6 @@
 		/datum/sprite_accessory/tail_feature/spines/longmeme,
 		/datum/sprite_accessory/tail_feature/spines/aquatic,
 		/// CAUSTIC EDIT
-		/datum/sprite_accessory/tail_feature/large_snake/underbelly,
 		/datum/sprite_accessory/tail_feature/taur/lamia,
 		/datum/sprite_accessory/tail_feature/taur/horse,
 		/datum/sprite_accessory/tail_feature/taur/lizard,

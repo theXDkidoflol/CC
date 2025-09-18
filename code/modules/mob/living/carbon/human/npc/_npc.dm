@@ -70,6 +70,8 @@
 		ignore_grab ||= TRUE
 	if(on_fire || buckled || restrained(ignore_grab = ignore_grab))
 		return TRUE
+	if(istype(loc,/obj/item/micro))
+		return TRUE
 	return FALSE
 
 // Check if a player is in range of the AI

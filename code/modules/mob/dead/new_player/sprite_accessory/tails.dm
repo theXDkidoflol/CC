@@ -160,6 +160,19 @@
 	icon = 'modular_causticcove/icons/mob/tails/large_snake.dmi'
 	name = "Large Snake"
 	icon_state = "large_snake"
+	color_keys = 2
+	color_key_names = list("Tail", "Underbelly")
+
+/datum/sprite_accessory/tail/large_tails
+	pixel_x = -16
+
+/datum/sprite_accessory/tail/large_tails/large_shark
+	icon = 'modular_causticcove/icons/mob/tails/large_shark.dmi'
+	name = "Large Shark"
+	icon_state = "large_shark"
+	color_keys = 2
+	color_key_names = list("Tail", "Underbelly")
+
 //Caustic Edit end
 
 /datum/sprite_accessory/tail/murid
