@@ -44,6 +44,7 @@
 		switch(weapon_choice)
 			if("Zweihander")
 				r_hand = /obj/item/rogueweapon/greatsword/grenz
+				beltl = /obj/item/flashlight/flare/torch/lantern
 			if("Kriegmesser & Buckler") // Buckler cuz they have no shield skill.
 				beltr = /obj/item/rogueweapon/scabbard/sword
 				r_hand = /obj/item/rogueweapon/sword/long/kriegmesser
@@ -76,7 +77,7 @@
 		STATKEY_STR = 2,//same str, worse end, more speed - actually a good tradeoff, now.
 		STATKEY_CON = 2,
 		STATKEY_WIL = 2, 
-		STATKEY_SPD = 1,
+		STATKEY_SPD = 2,
 		STATKEY_PER = -1 
 	)
 	subclass_skills = list(
@@ -126,6 +127,69 @@
 		/obj/item/rogueweapon/scabbard/sheath = 1
 		)
 	H.merctype = 7
+//CC ADD
+/datum/advclass/mercenary/grenzelhoft/fencer // Experimental class! May need a balance pass.
+	name = "Fechtenschutze"
+	tutorial = "You are a master fencer of the Zenitstadt fencing guild. You've abandoned the bulk of heavier armor in the name of perfecting each slash of your blade."
+	outfit = /datum/outfit/job/roguetown/mercenary/grenzelhoft_fencer
+	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_DODGEEXPERT, TRAIT_BADTRAINER)
+	subclass_stats = list(
+		STATKEY_STR = 1, //Should give minimum required stats to use Zweihander
+		STATKEY_CON = -1,
+		STATKEY_WIL = 2,
+		STATKEY_INT = 1,
+		STATKEY_SPD = 2, //Total of +7, in line with halberdier and crossbowman
+		STATKEY_PER = 2,
+	)
+	subclass_skills = list(
+		/datum/skill/misc/swimming = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/climbing = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/sneaking = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/unarmed = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/swords = SKILL_LEVEL_EXPERT, //Veeeeery risky. Not sure this is the right call. Testing needed.
+		/datum/skill/combat/knives = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/reading = SKILL_LEVEL_NOVICE,
+		/datum/skill/misc/athletics = SKILL_LEVEL_EXPERT,	// Staminachud mafia (needed for zwei)
+	)
+
+/datum/outfit/job/roguetown/mercenary/grenzelhoft_fencer/pre_equip(mob/living/carbon/human/H)
+	..()
+	to_chat(H, span_warning("Trained by the Zenitstadt fencing guild, You have abandoned the bulk of heavier armor for the art of feint and parry. "))
+	if(H.mind)
+		var/weapons = list("Zweihander", "Estoc", "Rapier and Buckler")
+		var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
+		switch(weapon_choice)
+			if("Zweihander")
+				backl = /obj/item/rogueweapon/scabbard/gwstrap
+				r_hand = /obj/item/rogueweapon/greatsword/grenz
+			if("Estoc")
+				backl = /obj/item/rogueweapon/scabbard/gwstrap
+				r_hand = /obj/item/rogueweapon/estoc
+			if ("Rapier and Buckler")
+				beltr = /obj/item/rogueweapon/scabbard/sword
+				r_hand = /obj/item/rogueweapon/sword/rapier
+				l_hand = /obj/item/rogueweapon/shield/buckler
+	//General gear regardless of class.
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	belt = /obj/item/storage/belt/rogue/leather
+	//neck = /obj/item/clothing/neck/roguetown/leather
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/grenzelhoft
+	//head = /obj/item/clothing/head/roguetown/grenzelhofthat
+	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants/grenzelpants
+	shoes = /obj/item/clothing/shoes/roguetown/grenzelhoft
+	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
+	backr = /obj/item/storage/backpack/rogue/satchel/black
+	backpack_contents = list(
+		/obj/item/roguekey/mercenary = 1,
+		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
+		/obj/item/flashlight/flare/torch = 1,
+		/obj/item/rogueweapon/huntingknife = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1
+		)
+	H.merctype = 7
+//END CC ADD
 
 //crossbow and axe class. Rearguard. Utility skills, no medium armor, no dodge expert. This is NOT a go-face-first-into-war class.
 /datum/advclass/mercenary/grenzelhoft/crossbowman
