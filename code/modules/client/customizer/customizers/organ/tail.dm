@@ -127,6 +127,7 @@
 		/datum/sprite_accessory/tail/lab,
 		//Caustic edit
 		/datum/sprite_accessory/tail/large_snake,
+		/datum/sprite_accessory/tail/large_snake_plain,
 		/datum/sprite_accessory/tail/large_tails/large_shark,
 		//Caustic edit end
 		/datum/sprite_accessory/tail/murid,
@@ -207,6 +208,7 @@
 		/datum/sprite_accessory/tail/lab,
 		//Caustic edit
 		/datum/sprite_accessory/tail/large_snake,
+		/datum/sprite_accessory/tail/large_snake_plain,
 		/datum/sprite_accessory/tail/large_tails/large_shark,
 		//Caustic edit end
 		/datum/sprite_accessory/tail/murid,
