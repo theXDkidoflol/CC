@@ -21,6 +21,9 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	"Sleepless"=/datum/charflaw/sleepless,
 	"Mute"=/datum/charflaw/mute,
 	"Critical Weakness"=/datum/charflaw/critweakness,
+	//Caustic edit
+	"Bottomless"=/datum/charflaw/bottomless,
+	//Caustic edit end
 	"Random or No Flaw"=/datum/charflaw/randflaw,
 	"No Flaw (3 TRIUMPHS)"=/datum/charflaw/noflaw,
 	))
