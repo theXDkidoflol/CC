@@ -40,11 +40,10 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/blacksteel_half_plate
 	if(H.mind)
 		var/weapons = list("Zweihander", "Kriegmesser & Buckler")
-		var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
+		var/weapon_choice = input(H, "Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 		switch(weapon_choice)
 			if("Zweihander")
 				r_hand = /obj/item/rogueweapon/greatsword/grenz
-				beltl = /obj/item/flashlight/flare/torch/lantern
 			if("Kriegmesser & Buckler") // Buckler cuz they have no shield skill.
 				beltr = /obj/item/rogueweapon/scabbard/sword
 				r_hand = /obj/item/rogueweapon/sword/long/kriegmesser
@@ -103,7 +102,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/blacksteel_half_plate
 	if(H.mind)
 		var/weapons = list("Halberd", "Partizan")
-		var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
+		var/weapon_choice = input(H, "Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 		switch(weapon_choice)
 			if("Halberd")
 				r_hand = /obj/item/rogueweapon/halberd
@@ -128,7 +127,7 @@
 		)
 	H.merctype = 7
 //CC ADD
-/datum/advclass/mercenary/grenzelhoft/fencer // Experimental class! May need a balance pass.
+/datum/advclass/mercenary/grenzelhoft/fencer // Rebalanced a bit.
 	name = "Fechtenschutze"
 	tutorial = "You are a master fencer of the Zenitstadt fencing guild. You've abandoned the bulk of heavier armor in the name of perfecting each slash of your blade."
 	outfit = /datum/outfit/job/roguetown/mercenary/grenzelhoft_fencer
@@ -147,10 +146,10 @@
 		/datum/skill/misc/sneaking = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/swords = SKILL_LEVEL_EXPERT, //Veeeeery risky. Not sure this is the right call. Testing needed.
+		/datum/skill/combat/swords = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/knives = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/reading = SKILL_LEVEL_NOVICE,
-		/datum/skill/misc/athletics = SKILL_LEVEL_EXPERT,	// Staminachud mafia (needed for zwei)
+		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN
 	)
 
 /datum/outfit/job/roguetown/mercenary/grenzelhoft_fencer/pre_equip(mob/living/carbon/human/H)
@@ -171,9 +170,9 @@
 				r_hand = /obj/item/rogueweapon/sword/rapier
 				l_hand = /obj/item/rogueweapon/shield/buckler
 	//General gear regardless of class.
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	belt = /obj/item/storage/belt/rogue/leather
-	//neck = /obj/item/clothing/neck/roguetown/leather
+	neck = /obj/item/clothing/neck/roguetown/gorget
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/grenzelhoft
 	//head = /obj/item/clothing/head/roguetown/grenzelhofthat
@@ -232,7 +231,7 @@
 	r_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	if(H.mind)
 		var/armor_options = list("Light Brigandine", "Studded Leather Vest")
-		var/armor_choice = input("Choose your armor.", "DRESS UP") as anything in armor_options
+		var/armor_choice = input(H, "Choose your armor.", "DRESS UP") as anything in armor_options
 		switch(armor_choice)
 			if("Light Brigandine")
 				armor = /obj/item/clothing/suit/roguetown/armor/brigandine/light	// find a smithy to fix it
