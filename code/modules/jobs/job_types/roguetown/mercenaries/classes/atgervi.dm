@@ -20,12 +20,12 @@
 		/datum/skill/misc/swimming = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/climbing = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/sneaking = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/axes = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/axes = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/bows = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/swords = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/shields = SKILL_LEVEL_EXPERT,	
+		/datum/skill/combat/shields = SKILL_LEVEL_JOURNEYMAN,	
 		/datum/skill/combat/polearms = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/maces = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/knives = SKILL_LEVEL_APPRENTICE,
@@ -37,9 +37,30 @@
 /datum/outfit/job/roguetown/mercenary/atgervi
 	allowed_patrons = ALL_INHUMEN_PATRONS
 
-/datum/outfit/job/roguetown/mercenary/atgervi/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/mercenary/atgervi/pre_equip(mob/living/carbon/human/H) //CC Edit: Gives Varangians more weapon options.
 	..()
 	to_chat(H, span_warning("You are a Varangian of the Gronn Highlands. Warrior-Traders whose exploits into the Raneshen Empire will be forever remembered by historians."))
+	//CC EDIT
+	if (H.mind)
+		var/weapons = list("Greataxe", "Bearded Axe & Kite Shield", "Shortsword & Kite Shield")
+		var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
+		switch(weapon_choice)
+			if("Greataxe")
+				H.adjust_skillrank_up_to(/datum/skill/combat/axes, 4, TRUE)
+				r_hand = /obj/item/rogueweapon/greataxe/steel
+				backr = /obj/item/rogueweapon/scabbard/gwstrap
+			if("Bearded Axe & Kite Shield")
+				H.adjust_skillrank_up_to(/datum/skill/combat/axes, 4, TRUE)
+				H.adjust_skillrank_up_to(/datum/skill/combat/shields, 4, TRUE)
+				beltl = /obj/item/rogueweapon/stoneaxe/woodcut/steel/atgervi
+				backr = /obj/item/rogueweapon/shield/atgervi
+			if ("Shortsword & Kite Shield")
+				H.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
+				H.adjust_skillrank_up_to(/datum/skill/combat/shields, 4, TRUE)
+				r_hand = /obj/item/rogueweapon/sword/short/falchion
+				backr = /obj/item/rogueweapon/shield/atgervi
+				beltl = /obj/item/rogueweapon/scabbard/sword
+				// END CC EDIT
 	head = /obj/item/clothing/head/roguetown/helmet/bascinet/atgervi
 	gloves = /obj/item/clothing/gloves/roguetown/angle/atgervi
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
@@ -47,12 +68,10 @@
 	pants = /obj/item/clothing/under/roguetown/trou/leather/atgervi
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/atgervi
-	backr = /obj/item/rogueweapon/shield/atgervi
 	backl = /obj/item/storage/backpack/rogue/satchel/black
-	beltr = /obj/item/rogueweapon/stoneaxe/woodcut/steel/atgervi
 	belt = /obj/item/storage/belt/rogue/leather
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/chainmantle //They didn't have neck protection before.
-	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_miracles(H, cleric_tier = CLERIC_T2, passive_gain = CLERIC_REGEN_WEAK, devotion_limit = CLERIC_REQ_2)	//Capped to T1 miracles.

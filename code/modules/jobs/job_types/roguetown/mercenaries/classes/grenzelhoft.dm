@@ -44,7 +44,6 @@
 		switch(weapon_choice)
 			if("Zweihander")
 				r_hand = /obj/item/rogueweapon/greatsword/grenz
-				beltl = /obj/item/flashlight/flare/torch/lantern
 			if("Kriegmesser & Buckler") // Buckler cuz they have no shield skill.
 				beltr = /obj/item/rogueweapon/scabbard/sword
 				r_hand = /obj/item/rogueweapon/sword/long/kriegmesser
@@ -128,7 +127,7 @@
 		)
 	H.merctype = 7
 //CC ADD
-/datum/advclass/mercenary/grenzelhoft/fencer // Experimental class! May need a balance pass.
+/datum/advclass/mercenary/grenzelhoft/fencer // Rebalanced a bit.
 	name = "Fechtenschutze"
 	tutorial = "You are a master fencer of the Zenitstadt fencing guild. You've abandoned the bulk of heavier armor in the name of perfecting each slash of your blade."
 	outfit = /datum/outfit/job/roguetown/mercenary/grenzelhoft_fencer
@@ -147,10 +146,10 @@
 		/datum/skill/misc/sneaking = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/swords = SKILL_LEVEL_EXPERT, //Veeeeery risky. Not sure this is the right call. Testing needed.
+		/datum/skill/combat/swords = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/knives = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/reading = SKILL_LEVEL_NOVICE,
-		/datum/skill/misc/athletics = SKILL_LEVEL_EXPERT,	// Staminachud mafia (needed for zwei)
+		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN
 	)
 
 /datum/outfit/job/roguetown/mercenary/grenzelhoft_fencer/pre_equip(mob/living/carbon/human/H)
@@ -171,9 +170,9 @@
 				r_hand = /obj/item/rogueweapon/sword/rapier
 				l_hand = /obj/item/rogueweapon/shield/buckler
 	//General gear regardless of class.
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	belt = /obj/item/storage/belt/rogue/leather
-	//neck = /obj/item/clothing/neck/roguetown/leather
+	neck = /obj/item/clothing/neck/roguetown/gorget
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/grenzelhoft
 	//head = /obj/item/clothing/head/roguetown/grenzelhofthat
