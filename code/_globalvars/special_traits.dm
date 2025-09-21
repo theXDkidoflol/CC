@@ -46,6 +46,7 @@ GLOBAL_LIST_INIT(special_traits, build_special_traits())
 	if(player.prefs.loadout3)
 		character.mind.special_items[player.prefs.loadout3::name] += player.prefs.loadout3.path
 	//Cove edit start
+	apply_prefs_sizecat(character,player)
 	if(player.prefs.loadout4)
 		character.mind.special_items[player.prefs.loadout4::name] += player.prefs.loadout4.path
 	if(player.prefs.loadout5)
