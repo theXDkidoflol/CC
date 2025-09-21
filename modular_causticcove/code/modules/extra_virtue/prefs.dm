@@ -28,7 +28,7 @@
 		if (istype(V, /datum/virtue/utility/noble) && (pref_species == /datum/species/construct/metal))		//Stops bypass of nobility for constructs.
 			continue
 		virtue_choices[V.name] = V
-	var/result = input(user, "Select a virtue", "Roguetown") as null|anything in virtue_choices
+	var/result = tgui_input_list(user, "Select a virtue", "VIRTUES",virtue_choices)
 	if (result)
 		var/datum/virtue/virtue_chosen = virtue_choices[result]
 		extravirtue = virtue_chosen
