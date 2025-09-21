@@ -262,12 +262,6 @@
 	additional_items = list(/obj/item/ingot/iron)
 	created_item = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 
-/datum/anvil_recipe/armor/iron/lbrigandine
-	name = "Light Brigandine, Iron (+1 Cloth)"
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/natural/cloth)
-	created_item = /obj/item/clothing/suit/roguetown/armor/brigandine/light
-	i_type = "Armor"
 
 /datum/anvil_recipe/armor/iron/wardenbrig
 	name = "Forester's Brigandine (+1 Forester's Armor, +1 Iron, +1 Essence of Wilderness)"
