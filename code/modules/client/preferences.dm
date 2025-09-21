@@ -202,6 +202,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/datum/advclass/preview_subclass
 
+	var/tgui_pref = TRUE
+
 /datum/preferences/New(client/C)
 	parent = C
 	migrant  = new /datum/migrant_pref(src)
@@ -306,6 +308,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			// ANOTHA ROW
 			dat += "<tr style='padding-top: 0px;padding-bottom:0px'>"
 			dat += "<td style='width:33%;text-align:left'>"
+			dat += "<a href='?_src_=prefs;preference=tgui_ui_prefs;task=menu'>[tgui_pref ? "TGUI" : "Legacy"]</a>"
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:center'>"
@@ -1308,7 +1311,8 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 				SetAntag(user)
 			else
 				SetAntag(user)
-
+	else if(href_list["preference"] == "tgui_ui_prefs")
+		tgui_pref = !tgui_pref
 	else if(href_list["preference"] == "triumphs")
 		user.show_triumphs_list()
 
@@ -1485,7 +1489,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							ghost_others = GHOST_OTHERS_SIMPLE
 
 				if("name")
-					var/new_name = input(user, "Choose your character's name:", "Identity")  as text|null
+					var/new_name = tgui_input_text(user, "Choose your character's name:", "Identity")
 					if(new_name)
 						new_name = reject_bad_name(new_name)
 						if(new_name)
@@ -1494,7 +1498,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ', . and ,.</font>")
 
 				if("nickname")
-					var/new_name = input(user, "Choose your character's nickname (For Highlighting):", "Nickname (For Chat Highlighting)")  as text|null
+					var/new_name = tgui_input_text(user, "Choose your character's nickname (For Highlighting):", "Nickname (For Chat Highlighting)")
 					if(new_name)
 						new_name = reject_bad_name(new_name)
 						if(new_name)
@@ -1563,7 +1567,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 					statpacks_available = sort_list(statpacks_available)
 
-					var/statpack_input = input(user, "Choose your character's statpack", "Statpack") as null|anything in statpacks_available
+					var/statpack_input = tgui_input_list(user, "Choose your character's statpack", "Statpack", statpacks_available, statpack)
 					if (statpack_input)
 						var/datum/statpack/statpack_chosen = statpacks_available[statpack_input]
 						statpack = statpack_chosen
@@ -1575,7 +1579,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							to_chat(user, span_info("Your virtue has been removed due to taking a stat-altering statpack.")) */
 				// LETHALSTONE EDIT: add pronouns
 				if ("pronouns")
-					var pronouns_input = input(user, "Choose your character's pronouns", "Pronouns") as null|anything in GLOB.pronouns_list
+					var pronouns_input = tgui_input_list(user, "Choose your character's pronouns", "Pronouns", GLOB.pronouns_list)
 					if(pronouns_input)
 						pronouns = pronouns_input
 						ResetJobs()
@@ -1584,7 +1588,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 				// LETHALSTONE EDIT: add voice type selection
 				if ("voicetype")
-					var voicetype_input = input(user, "Choose your character's voice type", "Voice Type") as null|anything in GLOB.voice_types_list
+					var voicetype_input = tgui_input_list(user, "Choose your character's voice type", "Voice Type", GLOB.voice_types_list) 
 					if(voicetype_input)
 						voice_type = voicetype_input
 						to_chat(user, "<font color='red'>Your character will now vocalize with a [lowertext(voice_type)] affect.</font>")
@@ -1600,7 +1604,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					for(var/obj/item/bodypart/taur/tt as anything in pref_species.get_taur_list())
 						taur_selection[tt::name] = tt
 					
-					var/new_taur_type = input(user, "Choose your character's taur body", "Taur Body") as null|anything in taur_selection
+					var/new_taur_type = tgui_input_list(user, "Choose your character's taur body", "Taur Body", taur_selection)
 					if(!new_taur_type)
 						return
 
@@ -1619,7 +1623,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						if(!faith.name)
 							continue
 						faiths_named[faith.name] = faith
-					var/faith_input = input(user, "Choose your character's faith", "Faith") as null|anything in faiths_named
+					var/faith_input = input(user, "Choose your character's faith", "Faith", faiths_named) 
 					if(faith_input)
 						var/datum/faith/faith = faiths_named[faith_input]
 						to_chat(user, "<font color='yellow'>Faith: [faith.name]</font>")
@@ -1635,7 +1639,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						patrons_named[patron.name] = patron
 					var/datum/faith/current_faith = GLOB.faithlist[selected_patron?.associated_faith] || GLOB.faithlist[initial(default_patron.associated_faith)]
-					var/god_input = input(user, "Choose your character's patron god", "[current_faith.name]") as null|anything in patrons_named
+					var/god_input = tgui_input_list(user, "Choose your character's patron god", "[current_faith.name]", patrons_named)
 					if(god_input)
 						selected_patron = patrons_named[god_input]
 						to_chat(user, "<font color='yellow'>Patron: [selected_patron]</font>")
@@ -1650,8 +1654,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						which is influenced by your job class, villain status, or certain events.\n\
 						You can change this later through \"Combat Mode Music\" in the Options tab.\"</span>")
 						combat_music_helptext_shown = TRUE
-					var/track_select = input(user, "Set a track to be your combat music.", "Combat Music", combat_music?.name)\
-											as null|anything in GLOB.cmode_tracks_by_name
+					var/track_select = tgui_input_list(user, "Set a track to be your combat music.", "Combat Music", GLOB.cmode_tracks_by_name, combat_music?.name)
 					if(track_select)
 						combat_music = GLOB.cmode_tracks_by_name[track_select]
 						to_chat(user, span_notice("Selected track: <b>[track_select]</b>."))
@@ -1695,7 +1698,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						var/datum/language/a_language = new language()
 						choices[a_language.name] = language
 					
-					var/chosen_language = input(user, "Choose your character's extra language:", "Character Preference") as null|anything in choices
+					var/chosen_language = tgui_input_list(user, "Choose your character's extra language:", "Character Preference", choices)
 					if(chosen_language)
 						if(chosen_language == "None")
 							extra_language = "None"
@@ -1703,7 +1706,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							extra_language = choices[chosen_language]
 
 				if("voice_pitch")
-					var/new_voice_pitch = input(user, "Choose your character's voice pitch ([MIN_VOICE_PITCH] to [MAX_VOICE_PITCH], lower is deeper):", "Voice Pitch") as null|num
+					var/new_voice_pitch = tgui_input_number(user, "Choose your character's voice pitch ([MIN_VOICE_PITCH] to [MAX_VOICE_PITCH], lower is deeper):", "Voice Pitch", 1, 1.35, 0.8)
 					if(new_voice_pitch)
 						if(new_voice_pitch < MIN_VOICE_PITCH || new_voice_pitch > MAX_VOICE_PITCH)
 							to_chat(user, "<font color='red'>Value must be between [MIN_VOICE_PITCH] and [MAX_VOICE_PITCH].</font>")
@@ -1711,7 +1714,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						voice_pitch = new_voice_pitch
 
 				if("highlight_color")
-					var/new_color = input(user, "Choose your character's nickname highlight color:", "Character Preference","#"+highlight_color) as color|null
+					var/new_color = tgui_color_picker(user, "Choose your character's nickname highlight color:", "Character Preference","#"+highlight_color)
 					if(new_color)
 						highlight_color = sanitize_hexcolor(new_color)
 
@@ -1719,7 +1722,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
 					to_chat(user, "<span class='notice'>Keep in mind that the photo will be downsized to 325x325 pixels, so the more square the photo, the better it will look.</span>")
-					var/new_headshot_link = input(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", headshot_link) as text|null
+					var/new_headshot_link = tgui_input_text(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", headshot_link)
 					if(new_headshot_link == null)
 						return
 					if(new_headshot_link == "")
@@ -1764,7 +1767,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					popup.open(FALSE)
 				if("flavortext")
 					to_chat(user, "<span class='notice'>["<span class='bold'>Flavortext should not include nonphysical nonsensory attributes such as backstory or the character's internal thoughts.</span>"]</span>")
-					var/new_flavortext = input(user, "Input your character description:", "Flavortext", flavortext) as message|null
+					var/new_flavortext = tgui_input_text(user, "Input your character description:", "Flavortext", flavortext, multiline = TRUE)
 					if(new_flavortext == null)
 						return
 					if(new_flavortext == "")
@@ -1783,7 +1786,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					log_game("[user] has set their flavortext'.")
 				if("ooc_notes")
 					to_chat(user, "<span class='notice'>["<span class='bold'>If you put 'anything goes' or 'no limits' here, do not be surprised if people take you up on it.</span>"]</span>")
-					var/new_ooc_notes = input(user, "Input your OOC preferences:", "OOC notes", ooc_notes) as message|null
+					var/new_ooc_notes = tgui_input_text(user, "Input your OOC preferences:", "OOC notes", ooc_notes, multiline = TRUE)
 					if(new_ooc_notes == null)
 						return
 					if(new_ooc_notes == "")
@@ -1837,7 +1840,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					to_chat(user, "<span class='notice'>Videos will be shrunk to a ~300x300 square. Keep this in mind.</span>")
 					to_chat(user, "<font color = '#d6d6d6'>Leave a single space to delete it from your OOC notes.</font>")
 					to_chat(user, "<font color ='red'>Abuse of this will get you banned.</font>")
-					var/new_extra_link = input(user, "Input the accessory link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "OOC Extra", ooc_extra_link) as text|null
+					var/new_extra_link = tgui_input_text(user, "Input the accessory link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "OOC Extra", ooc_extra_link)
 					if(new_extra_link == null)
 						return
 					if(new_extra_link == "")
@@ -1900,7 +1903,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						loadouts_available[loadout.name] = loadout
 
-					var/loadout_input = input(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK") as null|anything in loadouts_available
+					var/loadout_input = tgui_input_list(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK", loadouts_available) 
 					if(loadout_input)
 						if(loadout_input == "None")
 							loadout = null
@@ -1921,7 +1924,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						loadouts_available[loadout2.name] = loadout2
 
-					var/loadout_input2 = input(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK") as null|anything in loadouts_available
+					var/loadout_input2 = tgui_input_list(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK", loadouts_available) 
 					if(loadout_input2)
 						if(loadout_input2 == "None")
 							loadout2 = null
@@ -1942,7 +1945,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						loadouts_available[loadout3.name] = loadout3
 
-					var/loadout_input3 = input(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK") as null|anything in loadouts_available
+					var/loadout_input3 = tgui_input_list(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK", loadouts_available) 
 					if(loadout_input3)
 						if(loadout_input3 == "None")
 							loadout3 = null
@@ -1964,7 +1967,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						loadouts_available[loadout4.name] = loadout4
 
-					var/loadout_input4 = input(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK") as null|anything in loadouts_available
+					var/loadout_input4 = tgui_input_list(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK", loadouts_available) 
 					if(loadout_input4)
 						if(loadout_input4 == "None")
 							loadout4 = null
@@ -1985,7 +1988,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						loadouts_available[loadout5.name] = loadout5
 
-					var/loadout_input5 = input(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK") as null|anything in loadouts_available
+					var/loadout_input5 = tgui_input_list(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK", loadouts_available) 
 					if(loadout_input5)
 						if(loadout_input5 == "None")
 							loadout5 = null
@@ -2011,7 +2014,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 					species = sortNames(species)
 
-					var/result = input(user, "Select a race", "RACE") as null|anything in species
+					var/result = tgui_input_list(user, "Select a race", "RACE", species)
 
 					if(result)
 						set_new_race(result, user)
@@ -2036,7 +2039,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						virtue_choices[V.name] = V
 					virtue_choices = sort_list(virtue_choices)
-					var/result = input(user, "Select a virtue", "VIRTUES") as null|anything in virtue_choices
+					var/result = tgui_input_list(user, "Select a virtue", "VIRTUES",virtue_choices)
 
 					if (result)
 						var/datum/virtue/virtue_chosen = virtue_choices[result]
@@ -2057,7 +2060,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						virtue_choices[V.name] = V
 					virtue_choices = sort_list(virtue_choices)
-					var/result = input(user, "Select a virtue", "VIRTUES") as null|anything in virtue_choices
+					var/result = tgui_input_list(user, "Select a virtue", "VIRTUES",virtue_choices)
 
 					if (result)
 						var/datum/virtue/virtue_chosen = virtue_choices[result]
@@ -2070,7 +2073,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					get_extra_virtue_input(user)
 				if("charflaw")
 					var/list/coom = GLOB.character_flaws.Copy()
-					var/result = input(user, "Select a flaw", "FLAWS") as null|anything in coom
+					var/result = tgui_input_list(user, "Select a flaw", "FLAWS",coom)
 					if(result)
 						result = coom[result]
 						var/datum/charflaw/C = new result()
@@ -2079,7 +2082,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							to_chat(user, "<span class='info'>[charflaw.desc]</span>")
 
 				if("body_size")
-					var/new_body_size = input(user, "Choose your desired sprite size:\n([BODY_SIZE_MIN*100]%-[BODY_SIZE_MAX*100]%), Warning: May make your character look distorted", "Character Preference", features["body_size"]*100) as num|null
+					var/new_body_size = tgui_input_number(user, "Choose your desired sprite size:\n([BODY_SIZE_MIN*100]%-[BODY_SIZE_MAX*100]%), Warning: May make your character look distorted", "Character Preference", features["body_size"]*100)
 					if(new_body_size)
 						new_body_size = clamp(new_body_size * 0.01, BODY_SIZE_MIN, BODY_SIZE_MAX)
 						features["body_size"] = new_body_size
@@ -2125,14 +2128,14 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 */
 				if("s_tone")
 					var/listy = pref_species.get_skin_list()
-					var/new_s_tone = input(user, "Choose your character's skin tone:", "Sun")  as null|anything in listy
+					var/new_s_tone = tgui_input_list(user, "Choose your character's skin tone:", "Sun", listy)
 					if(new_s_tone)
 						skin_tone = listy[new_s_tone]
 						try_update_mutant_colors()
 
 				if("charflaw")
 					var/selectedflaw
-					selectedflaw = input(user, "Choose your character's flaw:", "Character Preference") as null|anything in GLOB.character_flaws
+					selectedflaw = tgui_input_list(user, "Choose your character's flaw:", "Character Preference", GLOB.character_flaws) 
 					if(selectedflaw)
 						charflaw = GLOB.character_flaws[selectedflaw]
 						charflaw = new charflaw()
@@ -2140,17 +2143,17 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							to_chat(user, span_info("[charflaw.desc]"))
 
 				if("char_accent")
-					var/selectedaccent = input(user, "Choose your character's accent:", "Character Preference") as null|anything in GLOB.character_accents
+					var/selectedaccent = tgui_input_list(user, "Choose your character's accent:", "Character Preference", GLOB.character_accents)
 					if(selectedaccent)
 						char_accent = selectedaccent
 
 				if("ooccolor")
-					var/new_ooccolor = input(user, "Choose your OOC colour:", "Game Preference",ooccolor) as color|null
+					var/new_ooccolor = tgui_color_picker(user, "Choose your OOC colour:", "Game Preference",ooccolor)
 					if(new_ooccolor)
 						ooccolor = new_ooccolor
 
 				if("asaycolor")
-					var/new_asaycolor = input(user, "Choose your ASAY color:", "Game Preference",asaycolor) as color|null
+					var/new_asaycolor = tgui_color_picker(user, "Choose your ASAY color:", "Game Preference",asaycolor)
 					if(new_asaycolor)
 						asaycolor = new_asaycolor
 
@@ -2490,7 +2493,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 								if(!name)
 									name = "Slot[i]"
 								choices[name] = i
-					var/choice = input(user, "CHOOSE A HERO","ROGUETOWN") as null|anything in choices
+					var/choice = tgui_input_list(user, "CHOOSE A HERO","ROGUETOWN", choices)
 					if(choice)
 						choice = choices[choice]
 						if(!load_character(choice))

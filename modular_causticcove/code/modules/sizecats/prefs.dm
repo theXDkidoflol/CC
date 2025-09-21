@@ -16,7 +16,7 @@
 	for (var/path as anything in GLOB.sizecats)
 		var/datum/sizecat/sc = GLOB.sizecats[path]
 		sizecat_choices[sc.name] = sc
-	var/result = input(user, "Select a size category", "Caustic Cove") as null|anything in sizecat_choices
+	var/result = tgui_input_list(user, "Select a size category", "Caustic Cove", sizecat_choices)
 	if (result)
 		var/datum/sizecat/sizecatchosen = sizecat_choices[result]
 		sizecat = sizecatchosen
