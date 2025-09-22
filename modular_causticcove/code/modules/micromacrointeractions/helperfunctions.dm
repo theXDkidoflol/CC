@@ -12,7 +12,7 @@
 	if(HAS_TRAIT(src, TRAIT_MACRO) || HAS_TRAIT(src, TRAIT_BIGGUY))
 		var/beeg = 0
 		if(HAS_TRAIT(src, TRAIT_MACRO))
-			beeg = 5
+			beeg = 6
 		if(HAS_TRAIT(src,TRAIT_BIGGUY))
 			beeg += 4
 		return beeg

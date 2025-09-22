@@ -97,11 +97,11 @@
 		var/mob/living/livingusr = usr
 		if(!Adjacent(usr))
 			return
-		if(M.voremode)
+		/*if(M.voremode) <-- commented out until is fixed!
 			if(Adjacent(M))
 				livingusr.vore_attack(livingusr, held_mob, M)
 			else
-				to_chat(livingusr,span_notice(M + " is too far!"))
+				to_chat(livingusr,span_notice(M + " is too far!"))*/
 		else
 			for(var/mob/living/carbon/human/O in contents)
 				O.show_inv(livingusr)
