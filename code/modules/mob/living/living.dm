@@ -699,6 +699,7 @@
 /mob/living/proc/setMaxHealth(newMaxHealth)
 	maxHealth = newMaxHealth
 
+
 // MOB PROCS //END
 
 /mob/living/proc/mob_sleep()
