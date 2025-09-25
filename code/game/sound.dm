@@ -417,6 +417,50 @@
 							'sound/foley/footsteps/armor/woodarmor (3).ogg',
 							)
 	//START OF CIT CHANGES - adds random vore sounds
+			if ("hunger_sounds") soundin = pick('modular_causticcove/sound/cvore/vore/growl1.ogg','modular_causticcove/sound/cvore/vore/growl2.ogg','modular_causticcove/sound/cvore/vore/growl3.ogg','modular_causticcove/sound/cvore/vore/growl4.ogg','modular_causticcove/sound/cvore/vore/growl5.ogg')
+
+			if("classic_digestion_sounds") soundin = pick(
+					'modular_causticcove/sound/cvore/vore/digest1.ogg','modular_causticcove/sound/cvore/vore/digest2.ogg','modular_causticcove/sound/cvore/vore/digest3.ogg','modular_causticcove/sound/cvore/vore/digest4.ogg',
+					'modular_causticcove/sound/cvore/vore/digest5.ogg','modular_causticcove/sound/cvore/vore/digest6.ogg','modular_causticcove/sound/cvore/vore/digest7.ogg','modular_causticcove/sound/cvore/vore/digest8.ogg',
+					'modular_causticcove/sound/cvore/vore/digest9.ogg','modular_causticcove/sound/cvore/vore/digest10.ogg','modular_causticcove/sound/cvore/vore/digest11.ogg','modular_causticcove/sound/cvore/vore/digest12.ogg')
+			if("classic_death_sounds") soundin = pick(
+					'modular_causticcove/sound/cvore/vore/death1.ogg','modular_causticcove/sound/cvore/vore/death2.ogg','modular_causticcove/sound/cvore/vore/death3.ogg','modular_causticcove/sound/cvore/vore/death4.ogg','modular_causticcove/sound/cvore/vore/death5.ogg',
+					'modular_causticcove/sound/cvore/vore/death6.ogg','modular_causticcove/sound/cvore/vore/death7.ogg','modular_causticcove/sound/cvore/vore/death8.ogg','modular_causticcove/sound/cvore/vore/death9.ogg','modular_causticcove/sound/cvore/vore/death10.ogg')
+			if("classic_struggle_sounds") soundin = pick('modular_causticcove/sound/cvore/vore/squish1.ogg','modular_causticcove/sound/cvore/vore/squish2.ogg','modular_causticcove/sound/cvore/vore/squish3.ogg','modular_causticcove/sound/cvore/vore/squish4.ogg')
+
+			if("fancy_prey_struggle") soundin = pick(
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/struggle_01.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/struggle_02.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/struggle_03.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/struggle_04.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/struggle_05.ogg')
+			if("fancy_digest_pred") soundin = pick(
+					'modular_causticcove/sound/cvore/vore/sunesound/pred/digest_01.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_02.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_03.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/pred/digest_04.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_05.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_06.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/pred/digest_07.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_08.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_09.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/pred/digest_10.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_11.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_12.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/pred/digest_13.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_14.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_15.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/pred/digest_16.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_17.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/digest_18.ogg')
+			if("fancy_death_pred") soundin = pick(
+					'modular_causticcove/sound/cvore/vore/sunesound/pred/death_01.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/death_02.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/death_03.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/pred/death_04.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/death_05.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/death_06.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/pred/death_07.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/death_08.ogg','modular_causticcove/sound/cvore/vore/sunesound/pred/death_09.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/pred/death_10.ogg')
+			if("fancy_digest_prey") soundin = pick(
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/digest_01.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_02.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_03.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/digest_04.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_05.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_06.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/digest_07.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_08.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_09.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/digest_10.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_11.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_12.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/digest_13.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_14.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_15.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/digest_16.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_17.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/digest_18.ogg')
+			if("fancy_death_prey") soundin = pick(
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/death_01.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/death_02.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/death_03.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/death_04.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/death_05.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/death_06.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/death_07.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/death_08.ogg','modular_causticcove/sound/cvore/vore/sunesound/prey/death_09.ogg',
+					'modular_causticcove/sound/cvore/vore/sunesound/prey/death_10.ogg')
+			if ("belches") soundin = pick(
+					'modular_causticcove/sound/cvore/vore/belches/belch1.ogg','modular_causticcove/sound/cvore/vore/belches/belch2.ogg','modular_causticcove/sound/cvore/vore/belches/belch3.ogg','modular_causticcove/sound/cvore/vore/belches/belch4.ogg',
+					'modular_causticcove/sound/cvore/vore/belches/belch5.ogg','modular_causticcove/sound/cvore/vore/belches/belch6.ogg','modular_causticcove/sound/cvore/vore/belches/belch7.ogg','modular_causticcove/sound/cvore/vore/belches/belch8.ogg',
+					'modular_causticcove/sound/cvore/vore/belches/belch9.ogg','modular_causticcove/sound/cvore/vore/belches/belch10.ogg','modular_causticcove/sound/cvore/vore/belches/belch11.ogg','modular_causticcove/sound/cvore/vore/belches/belch12.ogg',
+					'modular_causticcove/sound/cvore/vore/belches/belch13.ogg','modular_causticcove/sound/cvore/vore/belches/belch14.ogg','modular_causticcove/sound/cvore/vore/belches/belch15.ogg')
+			/* <-- Classic vore sounds, should be outdated by the new ones
 			if ("struggle_sound")
 				soundin = pick( 'modular_causticcove/sound/vore/pred/struggle_01.ogg','modular_causticcove/sound/vore/pred/struggle_02.ogg','modular_causticcove/sound/vore/pred/struggle_03.ogg',
 								'modular_causticcove/sound/vore/pred/struggle_04.ogg','modular_causticcove/sound/vore/pred/struggle_05.ogg')
@@ -450,5 +494,6 @@
 			if("hunger_sounds")
 				soundin = pick(	'modular_causticcove/sound/vore/growl1.ogg','modular_causticcove/sound/vore/growl2.ogg','modular_causticcove/sound/vore/growl3.ogg','modular_causticcove/sound/vore/growl4.ogg',
 								'modular_causticcove/sound/vore/growl5.ogg')
+			*/
 			//END OF CIT CHANGES
 	return soundin
