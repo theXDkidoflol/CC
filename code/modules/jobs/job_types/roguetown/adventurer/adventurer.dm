@@ -73,7 +73,6 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 		/datum/advclass/foreigner/slaver,
 		///Caustic edit
 		/datum/advclass/mage/spellthief,
-		/datum/advclass/lurker,
 		///Caustic edit end
 	)
 

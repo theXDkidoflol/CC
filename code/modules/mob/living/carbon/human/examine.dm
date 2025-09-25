@@ -513,7 +513,12 @@
 		else
 			str += "[wear_wrists.integrity_check()]"
 		. += str
-
+	//caustic edit
+	if(!(skin_armor == null))
+		var/str = "[m1] protected by [skin_armor]. "
+		str += skin_armor.integrity_check() //not tied to 'smart' because wild souls aren't
+		. += str
+	//caustic edit end
 	//handcuffed?
 	if(handcuffed)
 		if(user == src)

@@ -1,7 +1,7 @@
 /obj/item/clothing/suit/roguetown/armor/skin_armor/natural_armor
 	slot_flags = null
 	name = "natural armor"
-	desc = ""
+	desc = "You shouldn't be seeing this. CALL A DEV!"
 	icon_state = null
 	body_parts_covered = FULL_BODY
 	body_parts_inherent = FULL_BODY
@@ -13,8 +13,19 @@
 	max_integrity = 300
 	item_flags = DROPDEL
 	var/next_regen
+	var/regen_delay = 45 SECONDS
+	var/regen_cap = 100
+	var/regen_cost = 2 //less is cheaper
 	var/mob/living/carbon/human/skin_haver
 
+/obj/item/clothing/suit/roguetown/armor/skin_armor/natural_armor/heavy
+	name = "heavy natural armor"
+	max_integrity = 550 //this is the ONLY armor you can get. it should be pretty tough.
+	armor = ARMOR_NATURAL_METAL
+	blocksound = PLATEHIT //gonna see if this sound helps differentiate it from the light nat armor
+	regen_cap = 75
+	regen_delay = 30 SECONDS
+	regen_cost = 1
 
 /obj/item/clothing/suit/roguetown/armor/skin_armor/natural_armor/Initialize(mapload)
 	. = ..()
@@ -32,7 +43,7 @@
 	if(next_regen > world.time)
 		return
 	regenerate(skin_haver)
-	next_regen = world.time + 45 SECONDS
+	next_regen = world.time + regen_delay
 
 /obj/item/clothing/suit/roguetown/armor/skin_armor/natural_armor/proc/trait_add(mob/living/user)
 	skin_haver = user
@@ -61,11 +72,14 @@
 		return
 
 	//we can only regenerate 100 points of integrity at a time
-	var/regen_amt = min(100, max_integrity - obj_integrity)
+	var/regen_amt = min(regen_cap, max_integrity - obj_integrity)
 	obj_integrity += regen_amt
 
+	if(obj_broken)
+		obj_broken = FALSE //doesn't effect anything but the examine
+
 	 //Every 1 point of integrity is 2 points of hunger
-	skin_haver.adjust_nutrition(-regen_amt * 2)
+	skin_haver.adjust_nutrition(-regen_amt * regen_cost)
 
 	//some user feed back for regeneration
 	if(obj_integrity < max_integrity)
