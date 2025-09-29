@@ -2668,4 +2668,6 @@
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\orc.dm"
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\rogue_corpse.dm"
 #include "modular_hearthstone\code\modules\reagents\reagent_containers\lux.dm"
+#include "modular_causticcove\code\modules\juices\juices.dm"
+#include "modular_causticcove\code\modules\juices\varmods.dm"
 // END_INCLUDE
