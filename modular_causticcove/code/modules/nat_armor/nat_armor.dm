@@ -22,7 +22,7 @@
 	name = "heavy natural armor"
 	max_integrity = 550 //this is the ONLY armor you can get. it should be pretty tough.
 	armor = ARMOR_NATURAL_METAL
-	blocksound = PLATEHIT //gonna see if this sound helps differentiate it from the light nat armor
+	blocksound = CHAINHIT //gonna see if this sound helps differentiate it from the light nat armor
 	regen_cap = 75
 	regen_delay = 30 SECONDS
 	regen_cost = 1
