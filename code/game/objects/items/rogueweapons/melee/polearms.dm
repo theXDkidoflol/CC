@@ -10,11 +10,14 @@
 	clickcd = CLICK_CD_CHARGED
 	warnie = "mobwarning"
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 50
+	penfactor = 35
 	item_d_type = "stab"
 
+/datum/intent/spear/thrust/good
+	penfactor = 45
+
 /datum/intent/spear/thrust/militia
-	penfactor = 40
+	penfactor = 25
 
 /datum/intent/spear/bash
 	name = "bash"
@@ -72,7 +75,7 @@
 /datum/intent/sword/thrust/zwei
 	reach = 2
 
-/datum/intent/sword/thrust/estoc
+/datum/intent/sword/thrust/estoc //I have my eye on this one. I may need to grab mashi by the collar and interrogate him about it bc i hear this one is meta.
 	name = "thrust"
 	penfactor = 57	//At 57 pen + 25 base (82 total), you will always pen 80 stab armor, but you can't do it at range unlike a spear.
 	swingdelay = 8
@@ -247,8 +250,8 @@
 
 
 /obj/item/rogueweapon/spear
-	force = 20
-	force_wielded = 30
+	force = 15
+	force_wielded = 25
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "spear"
@@ -264,7 +267,8 @@
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
 	minstr = 8
-	max_blade_int = 180
+	max_blade_int = 150
+	max_integrity = 180
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
@@ -279,8 +283,8 @@
 	name = "bronze trident"
 	desc = "A bronze trident from the seas designed to pierce fish upon its hooked teeth. Feels balanced in your hand, like you could throw it quite easily."
 	icon_state = "bronzetri"
-	force = 25
-	force_wielded = 20
+	force = 23
+	force_wielded = 18
 	wdefense = 4
 	max_blade_int = 175
 	max_integrity = 225
@@ -362,9 +366,9 @@
 	name = "decrepit spear"
 	desc = "A rotting staff, tipped with frayed bronze. After the stone, but before the sword; an interlude for the violence that would soon engulf His world."
 	icon_state = "ancient_spear"
-	force = 13
-	force_wielded = 22
-	max_integrity = 120
+	force = 12
+	force_wielded = 18
+	max_integrity = 100
 	blade_dulling = DULLING_SHAFT_CONJURED
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
@@ -385,7 +389,7 @@
 	force = 15
 	force_wielded = 25
 	minstr = 11
-	wdefense = 6
+	wdefense = 5
 	resistance_flags = FIRE_PROOF	//It's meant to be smacked by a "lamptern", and is special enough to warrant overriding the spear weakness
 	is_silver = TRUE
 	smeltresult = /obj/item/ingot/silver
@@ -411,8 +415,8 @@
 				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 
 /obj/item/rogueweapon/spear/bonespear
-	force = 18
-	force_wielded = 22
+	force = 14
+	force_wielded = 20
 	name = "bone spear"
 	desc = "A spear made of bones..."
 	icon_state = "bonespear"
@@ -445,7 +449,7 @@
 
 /obj/item/rogueweapon/spear/improvisedbillhook
 	force = 12
-	force_wielded = 25
+	force_wielded = 22
 	name = "improvised billhook"
 	desc = "Looks hastily made, even a little flimsy."
 	icon_state = "billhook"
@@ -455,8 +459,8 @@
 	throwforce = 10
 
 /obj/item/rogueweapon/spear/stone
-	force = 15
-	force_wielded = 18
+	force = 12
+	force_wielded = 19
 	name = "stone spear"
 	desc = "This handmade spear is simple, but does the job."
 	icon_state = "stonespear"
@@ -489,7 +493,7 @@
 	smeltresult = null
 
 /obj/item/rogueweapon/fishspear
-	force = 20
+	force = 13
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH, SPEAR_CAST) //bash is for nonlethal takedowns, only targets limbs
 	name = "fishing spear"
 	desc = "This two-pronged and barbed spear was made to catch those pesky fish."
@@ -676,7 +680,7 @@
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
 	walking_stick = TRUE
-	wdefense = 6
+	wdefense = 5
 
 /obj/item/rogueweapon/halberd/getonmobprop(tag)
 	. = ..()
@@ -781,7 +785,7 @@
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	smeltresult = /obj/item/ingot/steel
 	max_blade_int = 160
-	wdefense = 9
+	wdefense = 7 //Editor's note: 12 DEF wielded holy fuck
 
 /obj/item/rogueweapon/halberd/glaive/getonmobprop(tag)
 	. = ..()
@@ -846,11 +850,11 @@
 	sellprice = 40
 
 /datum/intent/spear/thrust/eaglebeak
-	penfactor = 50
+	penfactor = 40
 	damfactor = 1
 
 /datum/intent/spear/thrust/glaive
-	penfactor = 50
+	penfactor = 35
 	damfactor = 1.1
 	chargetime = 0
 
@@ -873,7 +877,7 @@
 	force = 12
 	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/chop,/datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop, /datum/intent/sword/thrust/zwei, /datum/intent/sword/peel/big)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/long, /datum/intent/sword/thrust/zwei, /datum/intent/sword/peel/big)
 	alt_intents = list(/datum/intent/effect/daze, /datum/intent/sword/strike, /datum/intent/sword/bash)
 	name = "greatsword"
 	desc = "Might be able to chop anything in half!"
@@ -896,7 +900,8 @@
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/swords
 	max_blade_int = 300
-	wdefense = 5
+	wdefense = 3
+	wdefense_wbonus = 5
 	smelt_bar_num = 3
 
 /obj/item/rogueweapon/greatsword/getonmobprop(tag)
@@ -935,22 +940,20 @@
 
 /obj/item/rogueweapon/greatsword/zwei
 	name = "zweihander"
-	desc = "This is much longer than a common greatsword, and well balanced too!"
+	desc = "Designed for the battlefield, this design is popular with mercenary companies, the most noteworthy of which being the Grenzelhoft Doppelsoldner."
 	icon_state = "zwei"
 	smeltresult = /obj/item/ingot/iron
 	smelt_bar_num = 3
-	max_blade_int = 220
-	wdefense = 4
+	max_blade_int = 250
 	force = 14
 	force_wielded = 35
 
 /obj/item/rogueweapon/greatsword/grenz
 	name = "steel zweihander"
+	desc = "Designed for the battlefield, this design is popular with mercenary companies, the most noteworthy of which being the Grenzelhoft Doppelsoldner."
 	icon_state = "steelzwei"
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 3
-	max_blade_int = 240
-	wdefense = 4
 	force = 14
 	force_wielded = 35
 
@@ -1094,10 +1097,9 @@
 	minstr = 8
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/swords
-	max_blade_int = 400
-	max_integrity = 300
+	max_blade_int = 280
 	wdefense = 3
-	wdefense_wbonus = 6
+	wdefense_wbonus = 5
 	smelt_bar_num = 2
 
 /obj/item/rogueweapon/estoc/getonmobprop(tag)
@@ -1203,9 +1205,9 @@
 	name = "partizan"
 	desc = "A reinforced spear-like polearm of disputed origin: A studded shaft fitted with a steel spearhead with protrusions to aid in parrying. An extremely recent invention that is seeing increasingly more usage in the Western lands."
 	force = 8	//Not a possible one-handed weapon. Also too heavy!
-	force_wielded = 30
+	force_wielded = 28 //-2 force, fuck you.
 	possible_item_intents = list(SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(SPEAR_THRUST, PARTIZAN_REND, PARTIZAN_PEEL)
+	gripped_intents = list(/datum/intent/spear/thrust/good, PARTIZAN_REND, PARTIZAN_PEEL)
 	icon_state = "partizan"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	minstr = 10
@@ -1229,9 +1231,8 @@
 	It is also useful for parrying and stopping a charging opponent."
 	icon = 'icons/roguetown/weapons/polearms64.dmi'
 	icon_state = "boarspear"
-	force_wielded = 33 // 10% base damage increase
-	wdefense = 6 // A little bit extra
-	max_blade_int = 200 
+	force_wielded = 25 // 10% base damage increase
+	wdefense = 4 // A little bit extra 
 
 /obj/item/rogueweapon/spear/boar/frei
 	name = "Aavnic lándzsa"
@@ -1264,7 +1265,7 @@
 	icon = 'icons/roguetown/weapons/64.dmi'
 	minstr = 7
 	max_blade_int = 150 //Nippon suteeru (dogshit)
-	wdefense = 5
+	wdefense = 5 //5+3=8. No problem w/ this.
 	throwforce = 12	//Not a throwing weapon. 
 	icon_angle_wielded = 50
 

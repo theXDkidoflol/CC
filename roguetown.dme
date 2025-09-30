@@ -2675,6 +2675,8 @@
 #include "modular_causticcove\code\modules\harpies\harpy_organs.dm"
 #include "modular_causticcove\code\modules\harpies\harpy_species.dm"
 #include "modular_causticcove\code\modules\harpies\wings.dm"
+#include "modular_causticcove\code\modules\juices\juices.dm"
+#include "modular_causticcove\code\modules\juices\varmods.dm"
 #include "modular_causticcove\code\modules\merporgans\belly.dm"
 #include "modular_causticcove\code\modules\merporgans\butt.dm"
 #include "modular_causticcove\code\modules\micromacrointeractions\helperfunctions.dm"
