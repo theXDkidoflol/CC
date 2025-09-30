@@ -229,6 +229,7 @@
 	if(heterochromia)
 		eyes.heterochromia = heterochromia
 	eyes.Insert(man)
+	man.dna.organ_dna["eyes"]:organ_type = /obj/item/organ/eyes/night_vision/feral
 
 /obj/item/organ/eyes/night_vision/feral
 	name = "feral eyes"
