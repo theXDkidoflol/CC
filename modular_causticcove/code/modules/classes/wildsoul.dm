@@ -58,6 +58,7 @@
 		/datum/skill/misc/climbing = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/labor/butchering = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/medicine = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/tracking = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/craft/crafting = SKILL_LEVEL_APPRENTICE
 	) //not too many skills, the real gold here is the traits
 	outfit = /datum/outfit/job/roguetown/wildsoul/direbear
@@ -137,6 +138,7 @@
 		/datum/skill/combat/unarmed = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/polearms = SKILL_LEVEL_NOVICE,
 		/datum/skill/craft/alchemy = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/tracking = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/labor/butchering = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/craft/tanning = SKILL_LEVEL_APPRENTICE, //tome in waiting crafting
 		/datum/skill/labor/farming = SKILL_LEVEL_APPRENTICE
@@ -178,7 +180,7 @@
 		/datum/skill/misc/sewing = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/climbing = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/swimming = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/misc/tracking = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/tracking = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/craft/cooking = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/craft/tanning = SKILL_LEVEL_JOURNEYMAN, //still worse than a dedicated tailor off the start, but enough for most armor
 		/datum/skill/craft/carpentry = SKILL_LEVEL_JOURNEYMAN,
