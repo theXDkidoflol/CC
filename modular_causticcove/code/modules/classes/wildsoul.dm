@@ -82,7 +82,7 @@
 	traits_applied = list(TRAIT_FERAL, TRAIT_NATURAL_ARMOR, TRAIT_STRONGBITE, TRAIT_WOODWALKER, TRAIT_DODGEEXPERT)
 	category_tags = list(CTAG_WILDSOUL)
 	subclass_stats = list(
-		STATKEY_STR = 1,
+		STATKEY_STR = 2,
 		STATKEY_INT = -1,
 		STATKEY_PER = 4,
 		STATKEY_WIL = 1,
@@ -123,10 +123,10 @@
 	traits_applied = list(TRAIT_ARCYNE_T3, TRAIT_NATURAL_ARMOR, TRAIT_FERAL, TRAIT_WOODWALKER)
 	category_tags = list(CTAG_WILDSOUL)
 	subclass_stats = list(
-		STATKEY_STR = -1,
+		STATKEY_STR = 1,
 		STATKEY_INT = 3,
 		STATKEY_PER = 3,
-		STATKEY_WIL = 2,
+		STATKEY_WIL = 1,
 		STATKEY_SPD = 3,
 		STATKEY_CON = -1
 	)
