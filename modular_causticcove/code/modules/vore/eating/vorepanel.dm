@@ -16,8 +16,6 @@
 	set name = "Vore Panel"
 	set category = "Vore"
 
-	init_vore()
-
 	var/datum/vore_look/picker_holder = new()
 	picker_holder.loop = picker_holder
 	picker_holder.selected = vore_selected
