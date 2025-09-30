@@ -68,6 +68,14 @@
 		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/butt/human,
 		/datum/customizer/organ/testicles/anthro,
+		/datum/customizer/organ/tail/anthro,
+		/datum/customizer/organ/tail_feature/anthro,
+		/datum/customizer/organ/snout/anthro,
+		/datum/customizer/organ/ears/anthro,
+		/datum/customizer/organ/horns/anthro,
+		/datum/customizer/organ/frills/anthro,
+		/datum/customizer/organ/wings/anthro,
+		/datum/customizer/organ/neck_feature/anthro,
 		//Caustic edit end
 		)
 	body_marking_sets = list(
