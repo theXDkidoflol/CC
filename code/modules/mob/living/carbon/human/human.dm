@@ -303,18 +303,6 @@
 /mob/living/carbon/human/proc/canUseHUD()
 	return (mobility_flags & MOBILITY_USE)
 
-///Checking if the unit can bite
-/mob/living/carbon/human/proc/can_bite()
-	//if(mouth?.muteinmouth && mouth?.type != /obj/item/grabbing/bite) //This one allows continued first biting rather than having to chew
-	if(mouth?.muteinmouth)
-		return FALSE
-	for(var/obj/item/grabbing/grab in grabbedby) //Grabbed by the mouth
-		if(grab.sublimb_grabbed == BODY_ZONE_PRECISE_MOUTH)
-			return FALSE
-			
-	return TRUE
-
-
 /mob/living/carbon/human/can_inject(mob/user, error_msg, target_zone, penetrate_thick = 0)
 	. = 1 // Default to returning true.
 	if(user && !target_zone)
@@ -451,6 +439,18 @@
 			R.fields["name"] = newname
 
 /mob/living/carbon/human/get_total_tint()
+	if(isdullahan(src))
+		var/datum/species/dullahan/species = dna.species
+		var/obj/item/bodypart/head/dullahan/user_head = species.my_head
+		if(species.headless && user_head)
+			var/obj/item/organ/dullahan_vision/vision = getorganslot(ORGAN_SLOT_HUD)
+
+			if(vision && vision.viewing_head && user_head.eyes)
+				. = user_head.eyes.tint
+			else
+				. = INFINITY
+			return
+		
 	. = ..()
 	if(glasses)
 		. += glasses.tint

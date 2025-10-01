@@ -52,13 +52,15 @@
 	)
 	subclass_skills = list(
 		/datum/skill/misc/athletics = SKILL_LEVEL_EXPERT,
-		/datum/skill/combat/wrestling = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/wrestling = SKILL_LEVEL_MASTER,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_EXPERT,
 		/datum/skill/misc/swimming = SKILL_LEVEL_APPRENTICE, //just cus ur a wild guy doesn't mean you learned how to swim
 		/datum/skill/misc/climbing = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/labor/butchering = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/medicine = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/tracking = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/labor/farming = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/sneaking = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/craft/crafting = SKILL_LEVEL_APPRENTICE
 	) //not too many skills, the real gold here is the traits
 	outfit = /datum/outfit/job/roguetown/wildsoul/direbear
@@ -80,7 +82,7 @@
 	traits_applied = list(TRAIT_FERAL, TRAIT_NATURAL_ARMOR, TRAIT_STRONGBITE, TRAIT_WOODWALKER, TRAIT_DODGEEXPERT)
 	category_tags = list(CTAG_WILDSOUL)
 	subclass_stats = list(
-		STATKEY_STR = 1,
+		STATKEY_STR = 2,
 		STATKEY_INT = -1,
 		STATKEY_PER = 4,
 		STATKEY_WIL = 1,
@@ -100,6 +102,7 @@
 		/datum/skill/labor/butchering = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/climbing = SKILL_LEVEL_EXPERT,
 		/datum/skill/misc/stealing = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/labor/farming = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/lockpicking = SKILL_LEVEL_APPRENTICE
 	)
 	outfit = /datum/outfit/job/roguetown/wildsoul/mantid
@@ -120,10 +123,10 @@
 	traits_applied = list(TRAIT_ARCYNE_T3, TRAIT_NATURAL_ARMOR, TRAIT_FERAL, TRAIT_WOODWALKER)
 	category_tags = list(CTAG_WILDSOUL)
 	subclass_stats = list(
-		STATKEY_STR = -1,
+		STATKEY_STR = 1,
 		STATKEY_INT = 3,
 		STATKEY_PER = 3,
-		STATKEY_WIL = 2,
+		STATKEY_WIL = 1,
 		STATKEY_SPD = 3,
 		STATKEY_CON = -1
 	)
