@@ -613,6 +613,10 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 					var/obj/structure/flora/newbranch/branch = locate() in loc
 					if(branch)
 						sleepy_mod = 1.5 //Worse than a bedroll, better than nothing.
+		//Caustic edit
+		else if(istype(loc,/obj/belly))
+			sleepy_mod = 3
+		//Caustic edit end
 		if(sleepy_mod > 0)
 			if(eyesclosed)
 				var/armor_blocked = FALSE
