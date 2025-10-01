@@ -242,5 +242,5 @@
 	name = "Firearm Bullets (x10)"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/ammo_casing/caseless/rogue/bullet
-	createditem_num = 5
+	createditem_num = 10
 	craftdiff = 5
