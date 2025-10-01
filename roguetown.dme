@@ -8,7 +8,6 @@
 // END_PREFERENCES
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
-//#include "_maps\cove_world.dm"
 #include "_maps\map_files\generic\CentCom.dmm"
 #include "_maps\templates\arcyne_fortress.dm"
 #include "_maps\templates\bog_shack_small.dm"
@@ -2651,11 +2650,11 @@
 #include "modular_causticcove\code\datums\loadout.dm"
 #include "modular_causticcove\code\game\objects\effects\landmarks.dm"
 #include "modular_causticcove\code\game\objects\items\clothes\stockings.dm"
+#include "modular_causticcove\code\game\objects\items\weapons\ranged\arquebus.dm"
 #include "modular_causticcove\code\modules\baycode_port_helpers\baycode_port_helpers.dm"
 #include "modular_causticcove\code\modules\baycode_port_helpers\chemcolour.dm"
 #include "modular_causticcove\code\modules\baycode_port_helpers\hud.dm"
 #include "modular_causticcove\code\modules\baycode_port_helpers\mob.dm"
-#include "modular_causticcove\code\game\objects\items\weapons\ranged\arquebus.dm"
 #include "modular_causticcove\code\modules\bottomless\bottomless.dm"
 #include "modular_causticcove\code\modules\bottomless\maxfood.dm"
 #include "modular_causticcove\code\modules\bottomless\stressevent_gluton.dm"
