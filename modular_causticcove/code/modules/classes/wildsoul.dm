@@ -82,12 +82,12 @@
 	traits_applied = list(TRAIT_FERAL, TRAIT_NATURAL_ARMOR, TRAIT_STRONGBITE, TRAIT_WOODWALKER, TRAIT_DODGEEXPERT)
 	category_tags = list(CTAG_WILDSOUL)
 	subclass_stats = list(
-		STATKEY_STR = 2,
+		STATKEY_STR = 4,
 		STATKEY_INT = -1,
 		STATKEY_PER = 4,
 		STATKEY_WIL = 1,
 		STATKEY_SPD = 3,
-		STATKEY_CON = 1
+		STATKEY_CON = 2
 	)
 	subclass_skills = list(
 		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
