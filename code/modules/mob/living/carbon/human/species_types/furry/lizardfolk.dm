@@ -77,6 +77,8 @@
 		/datum/customizer/organ/breasts/animal,
 		/datum/customizer/organ/vagina/animal,
 		//Caustic edit
+		/datum/customizer/organ/tail/anthro,
+		/datum/customizer/organ/tail_feature/anthro,
 		/datum/customizer/organ/belly/animal,
 		/datum/customizer/organ/butt/animal,
 		//Caustic edit end
