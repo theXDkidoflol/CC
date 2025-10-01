@@ -2611,6 +2611,7 @@
 #include "modular_causticcove\__DEFINES\values.dm"
 #include "modular_causticcove\code\datums\loadout.dm"
 #include "modular_causticcove\code\game\objects\items\clothes\stockings.dm"
+#include "modular_causticcove\code\game\objects\items\weapons\ranged\arquebus.dm"
 #include "modular_causticcove\code\modules\bottomless\bottomless.dm"
 #include "modular_causticcove\code\modules\bottomless\maxfood.dm"
 #include "modular_causticcove\code\modules\bottomless\stressevent_gluton.dm"
