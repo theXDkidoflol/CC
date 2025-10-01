@@ -27,7 +27,25 @@
 	recipient.change_stat(STATKEY_WIL, 8)
 	recipient.change_stat(STATKEY_CON, 8)
 	recipient.change_stat(STATKEY_SPD, -14)
-	
+
+/datum/sizecat/small
+	name = "Small"
+	desc ="Somehow, due to a freak accident or magical energies, my form is below average in height.  My strength and body are impacted.  However, my smaller size allows me to slip blows that would hit others."
+	added_traits = list(TRAIT_SMALL)
+	custom_text = "Reduces your sprite size.  Makes you agile but slow.  In addition, your stealth will be strengthened.  Your strength and durability will be lower than average."
+
+/datum/sizecat/small/apply_to_human(mob/living/carbon/human/recipient)
+	recipient.transform = recipient.transform.Scale(0.5, 0.5)
+	recipient.transform = recipient.transform.Translate(0, (0.5 * 8))
+	recipient.update_transform()
+	recipient.change_stat(STATKEY_STR, -5)
+	recipient.change_stat(STATKEY_WIL, -2)
+	recipient.change_stat(STATKEY_CON, -5)
+	recipient.change_stat(STATKEY_SPD, -7)
+	recipient.pass_flags = PASSTABLE | PASSMOB
+	recipient.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
+	recipient.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
+
 /datum/sizecat/micro
 	name = "Micro"
 	desc ="Somehow, due to a freak accident or magical energies, my form is absolutely tiny. My strength and body are lacking. However, my dimutive size allows me to dodge blows that would otherwise hit others."
