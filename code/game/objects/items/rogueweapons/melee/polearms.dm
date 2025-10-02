@@ -940,9 +940,9 @@
 	smeltresult = /obj/item/ingot/aaslag
 
 /obj/item/rogueweapon/greatsword/zwei
-	name = "zweihander"
-	desc = "Designed for the battlefield, this design is popular with mercenary companies, the most noteworthy of which being the Grenzelhoft Doppelsoldner."
-	icon_state = "zwei"
+	name = "claymore"
+	desc = "This is much longer than a common greatsword, and well balanced too!"
+	icon_state = "claymore"
 	smeltresult = /obj/item/ingot/iron
 	smelt_bar_num = 3
 	max_blade_int = 250
