@@ -127,7 +127,6 @@
 		/datum/skill/combat/knives = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/craft/cooking = SKILL_LEVEL_EXPERT,
 		/datum/skill/craft/crafting = SKILL_EXP_JOURNEYMAN,
-		/datum/skill/misc/sewing = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/medicine = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/reading = SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/sneaking = SKILL_LEVEL_APPRENTICE,
