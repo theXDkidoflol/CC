@@ -102,8 +102,6 @@ GLOBAL_LIST_EMPTY(sizecats)
 			SStreasury.generate_money_account(20, recipient)
 		else
 			SStreasury.create_bank_account(recipient, 20)
-	if(HAS_TRAIT(recipient, TRAIT_RESIDENT))
-		REMOVE_TRAIT(recipient, ADVENTURER_TRAIT)
 
 /proc/apply_prefs_sizecat(mob/living/carbon/human/character, client/player)
 	if (!player)
