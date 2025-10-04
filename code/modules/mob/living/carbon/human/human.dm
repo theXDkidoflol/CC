@@ -724,7 +724,8 @@
 	if(pulling == target && stat == CONSCIOUS)
 		if(user.grab_state && user.voremode)
 			if(ismob(user.pulling))
-				user.vore_attack(user, target, src) // User, Pulled, Predator target (which can be user, pulling, or src)
+				vore_attackby(target, user)
+				user.vore_attackby(user, target, src) // User, Pulled, Predator target (which can be user, pulling, or src)
 				return TRUE
 		//Pick them up. Pick. Them. Up.
 		if(ishuman(target) && ishuman(user))
