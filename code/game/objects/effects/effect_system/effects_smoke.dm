@@ -282,3 +282,11 @@
 	smoke.effect_type = smoke_type
 	smoke.set_up(range, location)
 	smoke.start()
+
+/datum/effect_system/smoke_spread/fast
+	effect_type = /obj/effect/particle_effect/smoke/fast
+
+// Very quick smoke meant for artillery fireball
+/obj/effect/particle_effect/smoke/fast
+	lifetime = 1
+
