@@ -22,7 +22,7 @@
 	//job_reopens_slots_on_death = TRUE
 	//if new players take wild soul slots and die we can just uncomment this
 	selection_color = JCOLOR_YEOMAN
-	job_traits = list(TRAIT_OUTLANDER, TRAIT_OUTDOORSMAN, TRAIT_WILD_EATER, TRAIT_AZURENATIVE)
+	job_traits = list(TRAIT_OUTDOORSMAN, TRAIT_WILD_EATER, TRAIT_AZURENATIVE)
 	 //Other traits like FERAL, WOODWALKER, CIVILIZEDBARBARIAN, SEEDKNOW, and STRONGBITE to be applied to subclasses
 
 	round_contrib_points = 1 //just in case we start using PQ at some point, equal to mercenary
@@ -82,12 +82,12 @@
 	traits_applied = list(TRAIT_FERAL, TRAIT_NATURAL_ARMOR, TRAIT_STRONGBITE, TRAIT_WOODWALKER, TRAIT_DODGEEXPERT)
 	category_tags = list(CTAG_WILDSOUL)
 	subclass_stats = list(
-		STATKEY_STR = 2,
+		STATKEY_STR = 4,
 		STATKEY_INT = -1,
 		STATKEY_PER = 4,
 		STATKEY_WIL = 1,
 		STATKEY_SPD = 3,
-		STATKEY_CON = 1
+		STATKEY_CON = 2
 	)
 	subclass_skills = list(
 		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
@@ -180,7 +180,6 @@
 		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/sneaking = SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/medicine = SKILL_LEVEL_JOURNEYMAN, //good luck getting surgical tools if that's your goal
-		/datum/skill/misc/sewing = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/climbing = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/swimming = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/tracking = SKILL_LEVEL_JOURNEYMAN,
