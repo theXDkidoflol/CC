@@ -323,6 +323,7 @@
 	name = "forlorn collar"
 	desc = "A old reminder."
 	icon_state = "iwolfcollaralt"
+	leashable = TRUE
 
 /obj/item/clothing/neck/roguetown/gorget/steel
 	name = "steel gorget"
@@ -362,6 +363,7 @@
 	body_parts_covered = NECK
 	prevent_crits = list()
 	blocksound = PLATEHIT
+	leashable = TRUE
 
 /obj/item/clothing/neck/roguetown/psicross
 	name = "psycross"
@@ -609,16 +611,19 @@
 	item_state = "collar"
 	resistance_flags = FIRE_PROOF
 	dropshrink = 0.5
+	leashable = TRUE
 
 /obj/item/clothing/neck/roguetown/collar/forlorn
 	name = "light forlorn collar"
 	desc = "A old reminder. A lighter version often used more as a status symbol for slaves. Then and now."
 	icon_state = "iwolfcollaralt"
+	leashable = TRUE
 
 /obj/item/clothing/neck/roguetown/collar/bell_collar
 	name = "bell collar"
 	desc = "A band of leather with a bell that protects the local zads from the local catfolk."
 	icon_state = "bell_collar"
+	leashable = TRUE
 
 /obj/item/clothing/neck/roguetown/collar/bell_collar/Initialize(mapload)
 	. = ..()
