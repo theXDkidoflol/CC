@@ -79,22 +79,22 @@
 /datum/advclass/wildsoul/mantid
 	name = "Soul of the Mantid"
 	tutorial = "To fight head on never was your style. You prefer the subtle options; to be hidden, quiet, and strike at the opportune moment. But be wary, as that lack of brute strength and thick armor means you can't cut yourself out of an aspiring hunter's net so easily."
-	traits_applied = list(TRAIT_FERAL, TRAIT_NATURAL_ARMOR, TRAIT_STRONGBITE, TRAIT_WOODWALKER, TRAIT_DODGEEXPERT)
+	traits_applied = list(TRAIT_FERAL, TRAIT_NATURAL_ARMOR, TRAIT_CIVILIZEDBARBARIAN, TRAIT_WOODWALKER, TRAIT_DODGEEXPERT)
 	category_tags = list(CTAG_WILDSOUL)
 	subclass_stats = list(
-		STATKEY_STR = 4,
+		STATKEY_STR = 1,
 		STATKEY_INT = -1,
-		STATKEY_PER = 4,
+		STATKEY_PER = 3,
 		STATKEY_WIL = 1,
 		STATKEY_SPD = 3,
-		STATKEY_CON = 2
+		STATKEY_CON = 1
 	)
 	subclass_skills = list(
 		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/sneaking = SKILL_LEVEL_MASTER,
-		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN, //kind of experimenting here. we'll see how it feels
+		/datum/skill/combat/unarmed = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/knives = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/tracking = SKILL_LEVEL_EXPERT,
 		/datum/skill/misc/medicine = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/swimming = SKILL_LEVEL_JOURNEYMAN,
