@@ -55,7 +55,7 @@
 	if(prefs)
 		prefs.masked_examine = !prefs.masked_examine
 		prefs.save_preferences()
-		if(prefs.masked_examine)
+		if(!prefs.masked_examine)
 			to_chat(src, "Your character information will be viewable when masked.")
 		else
 			to_chat(src, "Your character information will no longer be viewable when masked.")
