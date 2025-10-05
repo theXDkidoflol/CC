@@ -51,7 +51,7 @@
 /obj/item/leash
 	name = "rope leash"
 	desc = "A simple rope with a knot at the end for easy attachment onto bindings."
-	icon = 'modular/icons/obj/leashes_collars.dmi'
+	icon = 'modular_causticcove/icons/obj/leashes_collars.dmi'
 	icon_state = "leash"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
@@ -72,14 +72,14 @@
 /obj/item/leash/leather
 	name = "leather leash"
 	desc = "A strip of treated leather with a metal clasp on the end for easy clipping onto bindings."
-	icon = 'modular/icons/obj/leashes_collars.dmi'
+	icon = 'modular_causticcove/icons/obj/leashes_collars.dmi'
 	icon_state = "leatherleash"
 	item_state = "leatherleash"
 
 /obj/item/leash/chain
 	name = "chain leash"
 	desc = "A durable metal chain with a metal clasp on the end for easy clipping onto bindings."
-	icon = 'modular/icons/obj/leashes_collars.dmi'
+	icon = 'modular_causticcove/icons/obj/leashes_collars.dmi'
 	icon_state = "chainleash"
 	item_state = "chainleash"
 	resistance_flags = FIRE_PROOF
@@ -406,77 +406,3 @@
 /*/datum/movespeed_modifier/leash
 	id = MOVESPEED_ID_LEASH
 	multiplicative_slowdown = 5 */
-
-/obj/item/catbell
-	name = "catbell"
-	desc = "A small jingly catbell."
-	icon = 'modular/icons/obj/leashes_collars.dmi'
-	icon_state = "catbell"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	throw_range = 4
-	force = 1
-	throwforce = 1
-	resistance_flags = FIRE_PROOF
-	w_class = WEIGHT_CLASS_TINY
-	var/last_ring
-
-/obj/item/catbell/cow
-	name = "cowbell"
-	desc = "A small jingly cowbell"
-	icon_state = "cowbell"
-
-/obj/item/catbell/attack_self(mob/living/user)
-	if(world.time < last_ring + 15)
-		return
-	user.visible_message(span_info("[user] starts ringing the [src]."))
-	playsound(src, 'sound/items/jinglebell1.ogg', 100, extrarange = 8, ignore_walls = TRUE)
-	flick("bell_commonpressed", src)
-	last_ring = world.time
-
-
-//Bell attachment onto collars
-/obj/item/catbell/attack(mob/living/carbon/target, mob/living/user)
-	var/obj/item/clothing/neck/roguetown/collar/leather/collar = target.get_item_by_slot(SLOT_NECK)
-	if(!istype(collar))
-		to_chat(user, "[target] needs a collar to attach the bell!")
-		return
-	if(collar.bell)
-		to_chat(user, "[target]'s collar already has a bell!")
-		return
-	target.visible_message(span_warning("[user] raises \the [src] to [target]'s neck!"), span_warning("[user] begins raising \the [src] to my neck!"), span_hear("I hear \a [src] jingling."), ignored_mobs = user)
-	to_chat(user, span_warning("I begin raising \the [src] to [target]'s neck!"))
-	if(!do_mob(user, target, target.handcuffed ? 0.5 SECONDS : 5 SECONDS))
-		return
-	log_combat(user, target, "put a bell on")
-	user.visible_message(span_warning("[target] has had \a [src] clipped onto [target.p_their()] [collar.name] by [user]!"), span_warning("I clip \a [src] onto [target]'s [collar.name]!"))
-	collar.bell = TRUE
-	collar.bellsound = TRUE
-	collar.AddComponent(/datum/component/squeak, SFX_COLLARJINGLE, 50, 100, 1)
-	if(istype(src, /obj/item/catbell/cow))
-		collar.icon_state = /obj/item/clothing/neck/roguetown/collar/cowbell::icon_state
-		collar.desc = "A leather collar with a jingly cowbell attached."
-		collar.name = "cowbell collar"
-	else
-		collar.icon_state = /obj/item/clothing/neck/roguetown/collar/catbell::icon_state
-		collar.desc = "A leather collar with a jingling catbell attached."
-		collar.name = "catbell collar"
-	target.update_inv_neck()
-	forceMove(collar) // move us inside the collar so that if we salvage it, we get the bell back
-
-
-/datum/crafting_recipe/roguetown/smithing/catbell
-	name = "catbell"
-	result = /obj/item/catbell
-	reqs = list(/obj/item/ingot/iron = 1)
-	category = "Smithing"
-	req_table = TRUE
-	always_availible = TRUE
-
-/datum/crafting_recipe/roguetown/smithing/cowbell
-	name = "cowbell"
-	result = /obj/item/catbell/cow
-	reqs = list(/obj/item/ingot/iron = 1)
-	category = "Smithing"
-	req_table = TRUE
-	always_availible = TRUE

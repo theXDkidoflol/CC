@@ -89,3 +89,17 @@
 /datum/loadout_item/grenzelhoftboots
 	name = "grenzelhoftian Boots"
 	path = /obj/item/clothing/shoes/roguetown/grenzelhoft/loadout
+
+//Leashes for weird people
+
+/datum/loadout_item/leash
+	name = "rope leash"
+	path = /obj/item/leash/
+
+/datum/loadout_item/leash_leather
+	name = "leather leash"
+	path = /obj/item/leash/leather
+
+/datum/loadout_item/leash_chain
+	name = "chain leash"
+	path = /obj/item/leash/chain
