@@ -265,6 +265,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	pda_style		= sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
 	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
 	key_bindings 	= sanitize_islist(key_bindings, list())
+	masked_examine  = sanitize_integer(masked_examine, 0, 1, initial(masked_examine))
 	
 	//ROGUETOWN
 	parallax = PARALLAX_INSANE
