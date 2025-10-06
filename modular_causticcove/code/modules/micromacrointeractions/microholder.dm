@@ -1,6 +1,7 @@
 /obj/item/micro
 	name = "micro"
 	desc = "A person? A toy? A snack? All three! They fit into your hand, how convinient!"
+	flags_1 = HEAR_1
 	var/mob/living/held_mob
 	var/matrix/original_transform
 	var/original_vis_flags = NONE
