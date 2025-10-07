@@ -85,6 +85,7 @@
 	resistance_flags = FIRE_PROOF
 	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/leash/process(delta_time)
 	if(!leash_pet) //No pet, break loop
